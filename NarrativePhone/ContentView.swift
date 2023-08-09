@@ -1,22 +1,13 @@
-//
-//  ContentView.swift
-//  NarrativePhone
-//
-//  Created by Muhammad Dzul Arsyil on 09/08/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            Text("Hwllo")
+        TabView{
+            ContactList().tabItem(){
+                Image(systemName: "person.2")
+                Text("連絡先")
+            }
         }
-        .padding()
     }
 }
 
