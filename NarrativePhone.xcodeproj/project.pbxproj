@@ -23,6 +23,10 @@
 		A8F924302A84079C0080D2C6 /* AccountListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9242F2A84079C0080D2C6 /* AccountListItem.swift */; };
 		A8F924322A840A7A0080D2C6 /* ContactGroupHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924312A840A7A0080D2C6 /* ContactGroupHeading.swift */; };
 		A8F924382A8412B40080D2C6 /* FavoriteContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924372A8412B40080D2C6 /* FavoriteContactList.swift */; };
+		A8F9243E2A8414E80080D2C6 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9243D2A8414E80080D2C6 /* AccountList.swift */; };
+		A8F924432A84157F0080D2C6 /* CallHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924422A84157F0080D2C6 /* CallHistoryList.swift */; };
+		A8F924472A8415CE0080D2C6 /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924462A8415CE0080D2C6 /* Call.swift */; };
+		A8F9244A2A8415F70080D2C6 /* CallHistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924492A8415F70080D2C6 /* CallHistoryListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		A8F9242F2A84079C0080D2C6 /* AccountListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListItem.swift; sourceTree = "<group>"; };
 		A8F924312A840A7A0080D2C6 /* ContactGroupHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGroupHeading.swift; sourceTree = "<group>"; };
 		A8F924372A8412B40080D2C6 /* FavoriteContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContactList.swift; sourceTree = "<group>"; };
+		A8F9243D2A8414E80080D2C6 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
+		A8F924422A84157F0080D2C6 /* CallHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryList.swift; sourceTree = "<group>"; };
+		A8F924462A8415CE0080D2C6 /* Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
+		A8F924492A8415F70080D2C6 /* CallHistoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,8 @@
 		A8BC71F42A838BE50088392C /* NarrativePhone */ = {
 			isa = PBXGroup;
 			children = (
+				A8F9243F2A84155C0080D2C6 /* CallHistory */,
+				A8F9243A2A8414A90080D2C6 /* AccountSwitcher */,
 				A8F924342A8412820080D2C6 /* FavoriteContact */,
 				A8F924272A8406B10080D2C6 /* Settings */,
 				A8F9241D2A8403D80080D2C6 /* Shared */,
@@ -284,6 +294,80 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		A8F9243A2A8414A90080D2C6 /* AccountSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				A8F9243B2A8414C50080D2C6 /* Feature */,
+			);
+			path = AccountSwitcher;
+			sourceTree = "<group>";
+		};
+		A8F9243B2A8414C50080D2C6 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A8F9243C2A8414D90080D2C6 /* AccountList */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		A8F9243C2A8414D90080D2C6 /* AccountList */ = {
+			isa = PBXGroup;
+			children = (
+				A8F9243D2A8414E80080D2C6 /* AccountList.swift */,
+			);
+			path = AccountList;
+			sourceTree = "<group>";
+		};
+		A8F9243F2A84155C0080D2C6 /* CallHistory */ = {
+			isa = PBXGroup;
+			children = (
+				A8F924482A8415E70080D2C6 /* UI */,
+				A8F924442A8415BA0080D2C6 /* DataAccess */,
+				A8F924402A8415650080D2C6 /* Feature */,
+			);
+			path = CallHistory;
+			sourceTree = "<group>";
+		};
+		A8F924402A8415650080D2C6 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A8F924412A84156D0080D2C6 /* List */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		A8F924412A84156D0080D2C6 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A8F924422A84157F0080D2C6 /* CallHistoryList.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		A8F924442A8415BA0080D2C6 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				A8F924452A8415C10080D2C6 /* Models */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		A8F924452A8415C10080D2C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8F924462A8415CE0080D2C6 /* Call.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8F924482A8415E70080D2C6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A8F924492A8415F70080D2C6 /* CallHistoryListItem.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -415,12 +499,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8F924202A8403ED0080D2C6 /* Contact.swift in Sources */,
+				A8F9244A2A8415F70080D2C6 /* CallHistoryListItem.swift in Sources */,
 				A8F9241B2A84032C0080D2C6 /* ContactList.swift in Sources */,
 				A8F924302A84079C0080D2C6 /* AccountListItem.swift in Sources */,
 				A8F924322A840A7A0080D2C6 /* ContactGroupHeading.swift in Sources */,
 				A8BC71F82A838BE50088392C /* ContentView.swift in Sources */,
+				A8F924472A8415CE0080D2C6 /* Call.swift in Sources */,
+				A8F9243E2A8414E80080D2C6 /* AccountList.swift in Sources */,
 				A8BC71F62A838BE50088392C /* NarrativePhoneApp.swift in Sources */,
 				A8F9242B2A8406DF0080D2C6 /* AccountSettings.swift in Sources */,
+				A8F924432A84157F0080D2C6 /* CallHistoryList.swift in Sources */,
 				A8F9242D2A84072F0080D2C6 /* Account.swift in Sources */,
 				A8F924382A8412B40080D2C6 /* FavoriteContactList.swift in Sources */,
 				A8F924232A84043C0080D2C6 /* ContactDetail.swift in Sources */,
