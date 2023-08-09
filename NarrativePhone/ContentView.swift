@@ -3,6 +3,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView{
+            FavoriteContactList().tabItem(){
+                Image(systemName: "star")
+                Text("お気に入り")
+            }
             ContactList().tabItem(){
                 Image(systemName: "person.2")
                 Text("連絡先")
