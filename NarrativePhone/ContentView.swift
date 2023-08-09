@@ -7,6 +7,10 @@ struct ContentView: View {
                 Image(systemName: "person.2")
                 Text("連絡先")
             }
+            AccountSettings().tabItem(){
+                Image(systemName: "gear")
+                Text("設定")
+            }
         }
     }
 }
