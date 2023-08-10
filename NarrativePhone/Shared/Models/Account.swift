@@ -1,4 +1,4 @@
-// TODO: rename fields
+// TODO: remove this file and use User struct
 struct Account: Identifiable {
     var id:Int
     var ddID: String

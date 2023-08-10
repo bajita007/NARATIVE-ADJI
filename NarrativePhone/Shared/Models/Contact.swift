@@ -1,4 +1,4 @@
-// TODO: rename fields
+// TODO: remove this file and use AddressEntry struct
 struct Contact: Identifiable {
     var id :Int
     var contact: String

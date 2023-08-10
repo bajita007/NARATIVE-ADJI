@@ -36,7 +36,7 @@ struct CallHistoryList: View {
                 ToolbarItem(placement: .principal) {
                     HStack {
                         Picker(selection: self.$choice,label: Text("Pilih Salah Satu")) {
-                            ForEach(0..<choices.count, content: { index in
+                            ForEach(0..<choices.count, id: \.self, content: { index in
                                 Text(choices[index])
                             })
                         }
