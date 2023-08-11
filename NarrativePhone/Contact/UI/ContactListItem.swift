@@ -4,7 +4,7 @@ struct ContactListItem: View {
     let contact : AddressEntry
     
     var body: some View {
-        NavigationLink(destination: ContactDetail()) {
+        NavigationLink(destination: ContactDetail(contact: contact)) {
             VStack {
                 HStack {
                     Image(systemName: "person.fill")

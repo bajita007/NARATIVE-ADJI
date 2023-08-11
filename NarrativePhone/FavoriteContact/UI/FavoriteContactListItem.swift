@@ -26,7 +26,7 @@ struct FavoriteContactListItem: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: ContactDetail()) {
+                NavigationLink(destination: ContactDetail(contact: contact)) {
                     Image(systemName: "info.circle")
                         .resizable()
                         .frame(width: 25, height: 25)

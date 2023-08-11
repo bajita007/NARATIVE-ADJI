@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct ContactCategoryModal: View {
-    let title:String
+    private let service = ContactService()
+    
+    let title: String
     
     let action: () -> Void
     
@@ -40,8 +42,7 @@ struct ContactCategoryModal: View {
                     HStack(spacing:0) {
                         Button {
                             cancel()
-                        }
-                        label: {
+                        } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
                                     .foregroundColor(.secondary)
@@ -58,8 +59,7 @@ struct ContactCategoryModal: View {
                         
                         Button {
                             action()
-                        }
-                        label: {
+                        } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
                                     .foregroundColor(.green)

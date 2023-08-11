@@ -1,104 +1,172 @@
 import SwiftUI
 
 struct ContactDetail: View {
-    @State private var desk: String = ""
-    @State private var fav: Int = 0
+    let contact: AddressEntry
+    
+    private let service = ContactService()
+    
+    @State private var isFavorited: Bool
+    
+    @State var showChangeCategoryModal: Bool
+    
+    @State var contactCategory: AddressCategory
+    
+    @State var description: String
+    
+    init(contact: AddressEntry) {
+        self.contact = contact
+        self.showChangeCategoryModal = false
+        self.isFavorited = contact.favourite
+        self.description = ""
+        self.contactCategory = AddressCategory(id: 1, name: "仕事", userId: 1)
+    }
   
     
     var body: some View {
-        NavigationView {
-                List{
-                    Section{
-                        Group{
-                            VStack{
+        ZStack {
+            VStack {
+                List {
+                    Section {
+                        Group {
+                            VStack {
                                 Image(systemName: "person.fill")
                                     .resizable()
                                     .frame(width: 120, height: 120)
                                     .foregroundColor(.white)
                                     .padding(30)
-                                    .background(Color.green)
+                                    .background(Color.yellow)
                                     .clipShape(Circle())
-                                // Name in kanji
-                                Text("山田太郎").font(.title2)
-                                // Name in hiragana
-                                Text("やまだたろう").font(.system(size: 14))
+                                
+                                // Fullname
+                                Text("山田太郎")
+                                    .font(.title2)
+                                
+                                Text(contact.description ?? "")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(.secondary)
+                                    .padding(.bottom)
+                                
                                 // Description
-                                TextField("メモ", text: $desk)
-                                    .textFieldStyle(.roundedBorder)
+                                Text("メモ")
+                                    .font(.system(size: 12))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                TextEditor(text: $description)
+                                    .background(Color.gray.opacity(0.1))
+                                    .cornerRadius(5)
+                                    .frame(height:75)
+                                    .lineSpacing(10)
+                                    .autocapitalization(.words)
+                                    .disableAutocorrection(true)
+                                    .padding(.bottom)
                             }
                         }
-                    }
-                    
-                    Section{
-                        Group{
-                            VStack{
+                        
+                        Group {
+                            VStack {
                                 Text("ナラティブブック")
                                     .font(.headline)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 
-                                HStack{
+                                HStack {
                                     Text("NBID").font(.body)
                                     Spacer()
                                     Text("yamada").font(.body)
                                 }
                                 
-                                HStack{
-                                    // Open NarrativeBook
+                                HStack {
                                     Text("ナラティブブック開く")
-                                        .font(.system(size: 11))
+                                        .font(.system(size: 12))
                                         .frame(maxWidth: .infinity, alignment: .trailing)
+                                    
                                     Image(systemName: "square.and.pencil")
-                                        .frame(width: 9, height: 9)
+                                        .resizable()
+                                        .frame(width: 10, height: 10)
                                 }
-                                .onTapGesture { print("author") }
+                                .onTapGesture {
+                                    print("Open NarrativeBook")
+                                }
                                 .foregroundColor(Color.blue)
+                                
                                 
                                 Divider()
                                 
-                                HStack{
-                                    // Favorite
+                                HStack {
                                     Text("お気に入り")
-                                    Image(systemName: fav == 0 ? "star": "star.fill")
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                 }
-                                .onTapGesture {  fav = fav == 0 ? 1 : 0}
-                                .foregroundColor(fav == 0 ? Color.black:Color.yellow)
+                                .onTapGesture {
+                                    isFavorited.toggle()
+                                }
+                                .foregroundColor(isFavorited ? Color.black:Color.yellow)
                                 
-                                HStack{
-                                    // Group Name
-                                    Text("グループ：仕事")
+                                HStack {
+                                    Text("グループ：" + contactCategory.name)
                                     Spacer()
-                                    // Change Group
-                                    Button(action: {
-                                        print("ganti group")
-                                    }) {
-                                        Text("グループを変更")
-                                    }
-                                    .padding(5)
-                                    .background(Color.secondary)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(5)
+                                    Text("グループを変更")
+                                        .onTapGesture {
+                                            showChangeCategoryModal = true
+                                        }
+                                        .font(.system(size: 12))
+                                        .padding(5)
+                                        .background(Color.secondary)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(5)
                                 }
                             }
                         }
                     }
-                    Image(systemName: "phone.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(.white)
-                        .padding(20)
-                        .background( Color.green)
-                        .clipShape(Circle())
-                        .frame(width: UIScreen.main.bounds.width, alignment: .center)
-                        .listRowBackground(Color.clear)
+                    
+                    VStack {
+                        Image(systemName: "phone.fill")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background( Color.green)
+                            .clipShape(Circle())
+                        
+                        // Make call
+                        Text("通話開始")
+                            .font(.system(size: 12))
+                            
+                    }
+                    .frame(width: UIScreen.main.bounds.width, alignment: .center)
+                    .listRowBackground(Color.clear)
                 }
+                .navigationTitle("連絡先詳細")
+                .navigationBarTitleDisplayMode(.inline)
             }
-        .navigationTitle("連絡先詳細")
+            
+            if showChangeCategoryModal {
+                ChangeCategoryModal(
+                    selected: contactCategory,
+                    action: { selected in
+                        self.contactCategory = selected
+                    },
+                    isActive: $showChangeCategoryModal
+                )
+            }
+        }
+        .task {
+            self.contactCategory = service.getContactCategory(id: contact.addressCategoryId)
+        }
     }
+            
 }
 
 struct ContactDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ContactDetail()
+        ContactDetail(contact: AddressEntry(
+            id: 2,
+            addressCategoryId: 2,
+            name: "山田太郎",
+            narrativePhoneId: "aasdflj",
+            nbAuthorId: nil,
+            nbOrganizationId: 1,
+            description: "クロースフィールド株式会社　代表",
+            iconImgPath: nil,
+            favourite: true
+        ))
     }
 }

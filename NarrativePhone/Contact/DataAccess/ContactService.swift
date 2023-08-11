@@ -45,4 +45,14 @@ class ContactService {
             AddressCategory(id: 2, name: "個人", userId: 1)
         ]
     }
+    
+    func getContactCategory(id: Int) -> AddressCategory {
+        let categories = getContactCategories()
+        
+        let category = categories.first { item in
+            item.id == id
+        }
+        
+        return category ?? AddressCategory(id: 1, name: "仕事", userId: 1)
+    }
 }
