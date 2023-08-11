@@ -1,20 +1,13 @@
 import SwiftUI
 
 struct CallHistoryList: View {
-    @State private var choices = ["すべて", "不在着信"]
-    @State private var choice = 0
-    @State private var callHistory = [
-        Call(id: 1,contact: "山田太郎", time: "9:40 AM", status: 2),
-        Call(id: 2, contact: "山田太郎", time: "9:35 AM", status: 1),
-        Call(id: 3, contact: "山田太郎", time: "9:35 AM", status: 3),
-        Call(id: 4, contact: "山田太郎", time: "9:35 AM",status: 3)
-    ]
+    private let tabs = ["すべて", "不在着信"]
     
-    var filterRes: [Call] {
-        choice == 0 ? callHistory : callHistory.filter{
-            $0.status == 3
-        }
-    }
+    private let service = CallHistoryService()
+    
+    @State private var filter = 0
+    
+    @State private var callHistory: [Call] = []
     
     func deleteItems(at offsets: IndexSet) {
         callHistory.remove(atOffsets: offsets)
@@ -24,8 +17,8 @@ struct CallHistoryList: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(filterRes) { call in
-                        CallHistoryListItem(call:call)
+                    ForEach(callHistory) { call in
+                        CallHistoryListItem(call: call)
                     }
                     .onDelete(perform: self.deleteItems)
                 }
@@ -35,16 +28,25 @@ struct CallHistoryList: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
-                        Picker(selection: self.$choice,label: Text("Pilih Salah Satu")) {
-                            ForEach(0..<choices.count, id: \.self, content: { index in
-                                Text(choices[index])
+                        Picker(selection: self.$filter, label: Text("Choose One")) {
+                            ForEach(0..<tabs.count, id: \.self, content: { index in
+                                Text(tabs[index])
                             })
                         }
                         .frame(width: 200)
                         .pickerStyle(SegmentedPickerStyle())
+                        .onChange(of: filter) { newValue in
+                            self.callHistory = service.getCallHistoryList(
+                                filter: newValue == 0
+                                    ? CallHistoryListFilter.all
+                                    : CallHistoryListFilter.missed)
+                        }
                     }
                 }
             }
+        }
+        .task {
+            self.callHistory = service.getCallHistoryList(filter: .all)
         }
     }
 }

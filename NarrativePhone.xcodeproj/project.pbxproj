@@ -20,6 +20,7 @@
 		A8BC72082A838BE60088392C /* NarrativePhoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC72072A838BE60088392C /* NarrativePhoneTests.swift */; };
 		A8BC72122A838BE60088392C /* NarrativePhoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC72112A838BE60088392C /* NarrativePhoneUITests.swift */; };
 		A8BC72142A838BE60088392C /* NarrativePhoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC72132A838BE60088392C /* NarrativePhoneUITestsLaunchTests.swift */; };
+		A8C891702A85245800AC2219 /* CallHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8916F2A85245800AC2219 /* CallHistoryService.swift */; };
 		A8F9241B2A84032C0080D2C6 /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9241A2A84032C0080D2C6 /* ContactList.swift */; };
 		A8F924202A8403ED0080D2C6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9241F2A8403ED0080D2C6 /* Contact.swift */; };
 		A8F924232A84043C0080D2C6 /* ContactDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924222A84043C0080D2C6 /* ContactDetail.swift */; };
@@ -70,6 +71,7 @@
 		A8BC720D2A838BE60088392C /* NarrativePhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NarrativePhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8BC72112A838BE60088392C /* NarrativePhoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativePhoneUITests.swift; sourceTree = "<group>"; };
 		A8BC72132A838BE60088392C /* NarrativePhoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativePhoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A8C8916F2A85245800AC2219 /* CallHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryService.swift; sourceTree = "<group>"; };
 		A8F9241A2A84032C0080D2C6 /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
 		A8F9241F2A8403ED0080D2C6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		A8F924222A84043C0080D2C6 /* ContactDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetail.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				A8F924452A8415C10080D2C6 /* Models */,
+				A8C8916F2A85245800AC2219 /* CallHistoryService.swift */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				A88A2E382A849D9D00201EAF /* PhoneCallAttendee.swift in Sources */,
 				A8F9242B2A8406DF0080D2C6 /* AccountSettings.swift in Sources */,
 				A8F924432A84157F0080D2C6 /* CallHistoryList.swift in Sources */,
+				A8C891702A85245800AC2219 /* CallHistoryService.swift in Sources */,
 				A8F9242D2A84072F0080D2C6 /* Account.swift in Sources */,
 				A8F924382A8412B40080D2C6 /* FavoriteContactList.swift in Sources */,
 				A8F924232A84043C0080D2C6 /* ContactDetail.swift in Sources */,

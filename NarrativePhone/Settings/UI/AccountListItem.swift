@@ -1,16 +1,17 @@
 import SwiftUI
 
 struct AccountListItem: View {
-    var account : Account
+    let account : Account
     
     var body: some View {
         VStack {
-            HStack{
-                Text(account.nama).font(.headline)
+            HStack {
+                Text(account.nama)
+                    .font(.headline)
                 
                 Spacer()
                 
-                Button{
+                Button {
                     print("Edit")
                 }
                 label:{
@@ -25,28 +26,28 @@ struct AccountListItem: View {
             // Account Info
             Group {
                 // NarrativePhone ID
-                HStack{
+                HStack {
                     Text("ナラティブフォンID").font(.body)
                     Spacer()
                     Text(account.ddID).font(.body)
                 }
                 
                 // Fullname
-                HStack{
+                HStack {
                     Text("表示名").font(.body)
                     Spacer()
                     Text(account.dd1).font(.body)
                 }
                 
                 // Description
-                HStack{
+                HStack {
                     Text("説明").font(.body)
                     Spacer()
                     Text(account.dd2).font(.body)
                 }
                 
                 // Email Address
-                HStack{
+                HStack {
                     Text("メールアドレス").font(.body)
                     Spacer()
                     Text(account.email).font(.body)
@@ -57,28 +58,27 @@ struct AccountListItem: View {
             }
             
             // NarrativeBook Account Info
-            Group{
+            Group {
                 Text("ナラティブブック")
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // NarrativeBook ID
-                HStack{
+                HStack {
                     Text("NBID").font(.body)
                     Spacer()
                     Text(account.NBID).font(.body)
                 }
                 
                 // Author ID
-                HStack{
+                HStack {
                     Text("AuthorID").font(.body)
                     Spacer()
                     Text(account.authorId).font(.body)
-                    
                 }
                 
                 // Open NarrativeBook
-                HStack{
+                HStack {
                     Text("ナラティブブック開く")
                         .font(.system(size: 11))
                         .frame(maxWidth: .infinity, alignment: .trailing)
@@ -92,7 +92,7 @@ struct AccountListItem: View {
             }
             
             // Zoom Account Info
-            Group{
+            Group {
                 Text("Zoom")
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .leading)
