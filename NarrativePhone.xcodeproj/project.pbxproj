@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A84D4A332A86865300A15AB1 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A322A86865300A15AB1 /* MainScreenView.swift */; };
+		A84D4A382A8686BB00A15AB1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A372A8686BB00A15AB1 /* Login.swift */; };
+		A84D4A3C2A868AC200A15AB1 /* ImportAccountOptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A3B2A868AC200A15AB1 /* ImportAccountOptionScreen.swift */; };
+		A84D4A3F2A868EC700A15AB1 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A3E2A868EC700A15AB1 /* Start.swift */; };
 		A88A2E2E2A849CF700201EAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2D2A849CF700201EAF /* User.swift */; };
 		A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */; };
 		A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E312A849D4700201EAF /* AddressCategory.swift */; };
@@ -54,6 +58,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A84D4A322A86865300A15AB1 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		A84D4A372A8686BB00A15AB1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		A84D4A3B2A868AC200A15AB1 /* ImportAccountOptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportAccountOptionScreen.swift; sourceTree = "<group>"; };
+		A84D4A3E2A868EC700A15AB1 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		A88A2E2D2A849CF700201EAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDevice.swift; sourceTree = "<group>"; };
 		A88A2E312A849D4700201EAF /* AddressCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCategory.swift; sourceTree = "<group>"; };
@@ -112,6 +120,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A84D4A302A8685F900A15AB1 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A312A86863900A15AB1 /* UI */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		A84D4A312A86863900A15AB1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A322A86865300A15AB1 /* MainScreenView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A84D4A342A86867F00A15AB1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A3A2A868A4700A15AB1 /* UI */,
+				A84D4A352A86868700A15AB1 /* Feature */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A84D4A352A86868700A15AB1 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A3D2A868EA100A15AB1 /* Start */,
+				A84D4A392A8688E800A15AB1 /* Register */,
+				A84D4A362A86868C00A15AB1 /* Login */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		A84D4A362A86868C00A15AB1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A372A8686BB00A15AB1 /* Login.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A84D4A392A8688E800A15AB1 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A84D4A3A2A868A4700A15AB1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A3B2A868AC200A15AB1 /* ImportAccountOptionScreen.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A84D4A3D2A868EA100A15AB1 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A3E2A868EC700A15AB1 /* Start.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
 		A8BC71E92A838BE50088392C = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +209,8 @@
 		A8BC71F42A838BE50088392C /* NarrativePhone */ = {
 			isa = PBXGroup;
 			children = (
+				A84D4A342A86867F00A15AB1 /* Authentication */,
+				A84D4A302A8685F900A15AB1 /* MainScreen */,
 				A8F9243F2A84155C0080D2C6 /* CallHistory */,
 				A8F9243A2A8414A90080D2C6 /* AccountSwitcher */,
 				A8F924342A8412820080D2C6 /* FavoriteContact */,
@@ -523,6 +599,7 @@
 				A8F9244A2A8415F70080D2C6 /* CallHistoryListItem.swift in Sources */,
 				A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */,
 				A8F9241B2A84032C0080D2C6 /* ContactList.swift in Sources */,
+				A84D4A3F2A868EC700A15AB1 /* Start.swift in Sources */,
 				A8F924302A84079C0080D2C6 /* AccountListItem.swift in Sources */,
 				A8F924322A840A7A0080D2C6 /* ContactGroupHeading.swift in Sources */,
 				A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */,
@@ -530,10 +607,13 @@
 				A88A2E2E2A849CF700201EAF /* User.swift in Sources */,
 				A8F924472A8415CE0080D2C6 /* Call.swift in Sources */,
 				A8F9243E2A8414E80080D2C6 /* AccountList.swift in Sources */,
+				A84D4A332A86865300A15AB1 /* MainScreenView.swift in Sources */,
 				A8BC71F62A838BE50088392C /* NarrativePhoneApp.swift in Sources */,
 				A88A2E342A849D5F00201EAF /* AddressEntry.swift in Sources */,
 				A88A2E382A849D9D00201EAF /* PhoneCallAttendee.swift in Sources */,
+				A84D4A382A8686BB00A15AB1 /* Login.swift in Sources */,
 				A8F9242B2A8406DF0080D2C6 /* AccountSettings.swift in Sources */,
+				A84D4A3C2A868AC200A15AB1 /* ImportAccountOptionScreen.swift in Sources */,
 				A8F924432A84157F0080D2C6 /* CallHistoryList.swift in Sources */,
 				A8C891702A85245800AC2219 /* CallHistoryService.swift in Sources */,
 				A8F9242D2A84072F0080D2C6 /* Account.swift in Sources */,
