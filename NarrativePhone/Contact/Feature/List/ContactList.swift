@@ -1,65 +1,65 @@
 import SwiftUI
 
 struct ContactList: View {
-    // TODO: move to data access file
-    @State private var contacts = [
-        Contact(
-            id: 1,
-            contact: "山田太郎",
-            group: "仕事",
-            desk: "クロースフィールド株式会社　代表",
-            fav:false
-        ),
-        Contact(
-            id: 2,
-            contact: "山田太郎",
-            group: "仕事",
-            desk: "クロースフィールド株式会社　代表",
-            fav:true
-        ),
-        Contact(
-            id: 3,
-            contact: "山田太郎",
-            group: "個人",
-            desk: "クロースフィールド株式会社　代表",
-            fav:false
-        ),
-    ]
+    private let service = ContactService()
     
-    func groupBy(_ items: [Contact]) -> [(String, [Contact])] {
-        let grouped = Dictionary(grouping: items, by: { $0.group})
-        return grouped.sorted(by: { $0.key < $1.key })
-    }
+    @State private var contactCategories: [AddressCategory] = []
     
-    func deleteItems(at offsets: IndexSet) {
-        contacts.remove(atOffsets: offsets)
-    }
+    @State var showModal: Bool = false
+    
+    @State var selectedContactCategory: String = ""
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(groupBy(contacts), id:\.0) { cont in
-                    Section(header: ContactGroupHeading(title: cont.0)
-                        .foregroundColor(.blue)) {
-                            ForEach(cont.1) { item in
-                                ContactListItem(contact:item)
+            ZStack {
+                ScrollView {
+                    VStack(spacing: 0) {
+                        ForEach(contactCategories) { category in
+                            Section(
+                                header: ContactGroupHeading(
+                                    title: category.name,
+                                    showModal: $showModal,
+                                    categoryName: $selectedContactCategory
+                                )
+                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                                .foregroundColor(.blue)
+                            ) {
+                                ForEach(service.getByCategory(categoryId: category.id)) { contact in
+                                    ContactListItem(contact: contact)
+                                }
                             }
-                        .onDelete(perform: self.deleteItems)
+                        }
                     }
                 }
+                .navigationTitle("連絡先")
+                .navigationBarItems(
+                    trailing: Button {
+                        selectedContactCategory = ""
+                        showModal = true
+                    }
+                    label: {
+                        // Add Group
+                        Text("グループ追加")
+                    }
+                )
+                
+                if showModal {
+                    ContactCategoryModal(
+                        title: selectedContactCategory == ""
+                            ? "連絡先グループ追加"
+                            : "連絡先グループ名変更",
+                        action: {
+                            showModal = false
+                            selectedContactCategory = ""
+                        },
+                        isActive: $showModal,
+                        categoryName: $selectedContactCategory
+                    )
+                }
             }
-            .listStyle(GroupedListStyle())
-            .navigationTitle("連絡先")
-            .navigationBarItems(
-                trailing: Button{
-                    print("ADD")
-                }
-                label: {
-                    // Add Group
-                    Text("グループ追加")
-                }
-            )
-               
+        }
+        .task {
+            self.contactCategories = service.getContactCategories()
         }
     }
 }
