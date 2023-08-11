@@ -36,8 +36,7 @@ struct ContactList: View {
                     trailing: Button {
                         selectedContactCategory = ""
                         showModal = true
-                    }
-                    label: {
+                    } label: {
                         // Add Group
                         Text("グループ追加")
                     }

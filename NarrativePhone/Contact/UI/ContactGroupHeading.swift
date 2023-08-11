@@ -19,8 +19,7 @@ struct ContactGroupHeading: View {
                 Button {
                     showModal = true
                     categoryName = title
-                }
-                label: {
+                } label: {
                     Image(systemName: "highlighter")
                         .resizable()
                         .frame(width: 20, height: 20)
@@ -30,8 +29,7 @@ struct ContactGroupHeading: View {
                 
                 Button{
                     print("Switch")
-                }
-                label: {
+                } label: {
                     Image(systemName: "person.line.dotted.person")
                         .resizable()
                         .frame(width: 35, height: 20)

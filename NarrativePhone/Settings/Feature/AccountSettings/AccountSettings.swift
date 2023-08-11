@@ -20,10 +20,9 @@ struct AccountSettings: View {
             .listStyle(.insetGrouped)
             .navigationTitle("設定")
             .navigationBarItems(
-                trailing: Button{
+                trailing: Button {
                     print("ADD")
-                }
-                label: {
+                } label: {
                     // Add Account
                     Text("アカウント追加")
                 }
