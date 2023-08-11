@@ -1,14 +1,14 @@
 import Foundation
 
 // Contact
-struct AddressEntry {
+struct AddressEntry: Codable {
     let id: Int
-    let address_category_id: Int
+    let addressCategoryId: Int
     let name: String
-    let narrative_phone_id: String
-    let nb_author_id: String?
-    let nb_organization_id: Int
+    let narrativePhoneId: String
+    let nbAuthorId: String?
+    let nbOrganizationId: Int
     let description: String?
-    let icon_img_path: String?
+    let iconImgPath: String?
     let favourite: Bool
 }

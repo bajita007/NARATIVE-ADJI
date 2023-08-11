@@ -1,12 +1,12 @@
 import Foundation
 
-struct PhoneCallAttendee {
+struct PhoneCallAttendee: Codable {
     let id: Int
-    let phone_call_id: Int
-    let narrative_phone_id: String
-    let device_id: String?
-    let respound_at: Date?
-    let hang_uped_at: Date?
+    let phoneCallId: Int
+    let narrativePhoneId: String
+    let deviceId: String?
+    let respoundAt: Date?
+    let hangUpedAt: Date?
     let reject: Bool?
-    let reject_message: String?
+    let rejectMessage: String?
 }

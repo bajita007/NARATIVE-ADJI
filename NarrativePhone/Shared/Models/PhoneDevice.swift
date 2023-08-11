@@ -1,11 +1,11 @@
 import Foundation
 
-struct PhoneDevice {
+struct PhoneDevice: Codable {
     let id: Int
-    let user_id: Int
-    let phone_device_id: String
-    let phone_device_description: String
-    let created_at: Date
+    let userId: Int
+    let phoneDeviceId: String
+    let phoneDeviceDescription: String
+    let createdAt: Date
     let available: Bool
     let deleted: Bool
 }

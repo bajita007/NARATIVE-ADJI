@@ -1,8 +1,8 @@
 import Foundation
 
 // Contact category
-struct AddressCategory {
+struct AddressCategory: Codable {
     let id: Int
     let name: String
-    let user_id: Int
+    let userId: Int
 }
