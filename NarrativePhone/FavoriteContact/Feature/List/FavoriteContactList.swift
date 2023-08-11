@@ -1,33 +1,23 @@
 import SwiftUI
 
 struct FavoriteContactList: View {
-    // TODO: move to data access file
-    @State private var contacts = [
-        Contact(
-            id: 1,
-            contact: "山田太郎",
-            group: "仕事",
-            desk: "クロースフィールド株式会社　代表",
-            fav:false
-        ),
-        Contact(
-            id: 2,
-            contact: "山田太郎",
-            group: "仕事",
-            desk: "クロースフィールド株式会社　代表",
-            fav:true
-        )
-    ]
+    private let service = FavoriteContactService()
+    
+    @State private var contacts: [AddressEntry] = []
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(contacts){ (item) in
-                    ContactListItem(contact:item)
+            ScrollView(.vertical) {
+                VStack {
+                    ForEach(contacts) { item in
+                        FavoriteContactListItem(contact: item)
+                    }
+                    .navigationTitle("お気に入り")
                 }
             }
-            .listStyle(GroupedListStyle())
-            .navigationTitle("お気に入り")
+        }
+        .task {
+            self.contacts = service.getAll()
         }
     }
 }

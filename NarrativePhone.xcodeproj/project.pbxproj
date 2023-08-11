@@ -11,6 +11,8 @@
 		A84D4A382A8686BB00A15AB1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A372A8686BB00A15AB1 /* Login.swift */; };
 		A84D4A3C2A868AC200A15AB1 /* ImportAccountOptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A3B2A868AC200A15AB1 /* ImportAccountOptionScreen.swift */; };
 		A84D4A3F2A868EC700A15AB1 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A3E2A868EC700A15AB1 /* Start.swift */; };
+		A84D4A422A8691B000A15AB1 /* FavoriteContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A412A8691B000A15AB1 /* FavoriteContactService.swift */; };
+		A84D4A452A8692E600A15AB1 /* FavoriteContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A442A8692E600A15AB1 /* FavoriteContactListItem.swift */; };
 		A88A2E2E2A849CF700201EAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2D2A849CF700201EAF /* User.swift */; };
 		A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */; };
 		A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E312A849D4700201EAF /* AddressCategory.swift */; };
@@ -62,6 +64,8 @@
 		A84D4A372A8686BB00A15AB1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		A84D4A3B2A868AC200A15AB1 /* ImportAccountOptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportAccountOptionScreen.swift; sourceTree = "<group>"; };
 		A84D4A3E2A868EC700A15AB1 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
+		A84D4A412A8691B000A15AB1 /* FavoriteContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContactService.swift; sourceTree = "<group>"; };
+		A84D4A442A8692E600A15AB1 /* FavoriteContactListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContactListItem.swift; sourceTree = "<group>"; };
 		A88A2E2D2A849CF700201EAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDevice.swift; sourceTree = "<group>"; };
 		A88A2E312A849D4700201EAF /* AddressCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCategory.swift; sourceTree = "<group>"; };
@@ -184,6 +188,22 @@
 				A84D4A3E2A868EC700A15AB1 /* Start.swift */,
 			);
 			path = Start;
+			sourceTree = "<group>";
+		};
+		A84D4A402A86918900A15AB1 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A412A8691B000A15AB1 /* FavoriteContactService.swift */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		A84D4A432A8692C500A15AB1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A442A8692E600A15AB1 /* FavoriteContactListItem.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		A8BC71E92A838BE50088392C = {
@@ -361,6 +381,8 @@
 		A8F924342A8412820080D2C6 /* FavoriteContact */ = {
 			isa = PBXGroup;
 			children = (
+				A84D4A432A8692C500A15AB1 /* UI */,
+				A84D4A402A86918900A15AB1 /* DataAccess */,
 				A8F924352A8412970080D2C6 /* Feature */,
 			);
 			path = FavoriteContact;
@@ -605,6 +627,7 @@
 				A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */,
 				A8BC71F82A838BE50088392C /* ContentView.swift in Sources */,
 				A88A2E2E2A849CF700201EAF /* User.swift in Sources */,
+				A84D4A422A8691B000A15AB1 /* FavoriteContactService.swift in Sources */,
 				A8F924472A8415CE0080D2C6 /* Call.swift in Sources */,
 				A8F9243E2A8414E80080D2C6 /* AccountList.swift in Sources */,
 				A84D4A332A86865300A15AB1 /* MainScreenView.swift in Sources */,
@@ -621,6 +644,7 @@
 				A8F924232A84043C0080D2C6 /* ContactDetail.swift in Sources */,
 				A88A2E362A849D8400201EAF /* PhoneCall.swift in Sources */,
 				A8F924262A8405D50080D2C6 /* ContactListItem.swift in Sources */,
+				A84D4A452A8692E600A15AB1 /* FavoriteContactListItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,7 @@
 import Foundation
 
 // Contact
-struct AddressEntry: Codable {
+struct AddressEntry: Identifiable, Codable {
     let id: Int
     let addressCategoryId: Int
     let name: String
