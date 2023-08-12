@@ -18,7 +18,7 @@ struct ImportAccountOptionScreen: View {
             }
             
             Button(action: {
-                print("Login with NarrativeBook Account clicked")
+                print("Login with NarrativeBook Account clicked. Open webview")
             }) {
                 Text("ナラティブブックでログイン")
                     .frame(minWidth: 0, maxWidth: .infinity)

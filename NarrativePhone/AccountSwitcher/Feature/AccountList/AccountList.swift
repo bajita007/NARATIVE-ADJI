@@ -2,7 +2,8 @@ import SwiftUI
 
 struct AccountList: View {
     var body: some View {
-        Text("ユーザー切り替え")
+        // Account swicher view
+        Text("ユーザー切り替え画面")
     }
 }
 

@@ -12,23 +12,32 @@ struct Login: View {
                 .font(.system(size: 20))
                 .padding(.top)
             
+
             VStack(alignment: .leading) {
-                Label("メールアドレス", systemImage: "")
-                    .labelStyle(.titleOnly)
-                    .foregroundColor(.black)
+                // Email address
+                Group {
+                    Label("メールアドレス", systemImage: "")
+                        .labelStyle(.titleOnly)
+                        .foregroundColor(.black)
+                    
+                    TextField("", text: $email)
+                        .textFieldStyle(.roundedBorder)
+                }
                 
-                TextField("", text: $email)
-                    .textFieldStyle(.roundedBorder)
-                
-                Label("パスワード", systemImage: "")
-                    .labelStyle(.titleOnly)
-                    .foregroundColor(.black)
-                
-                TextField("", text: $email)
-                    .textFieldStyle(.roundedBorder)
+                // Password
+                Group {
+                    Label("パスワード", systemImage: "")
+                        .labelStyle(.titleOnly)
+                        .foregroundColor(.black)
+                    
+                    TextField("", text: $email)
+                        .textFieldStyle(.roundedBorder)
+                }
             }.padding()
             
-            NavigationLink(destination: MainScreenView()) {
+            Button(action: {
+                print("Perform login sequence")
+            }) {
                 Text("ログイン")
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .padding()

@@ -18,8 +18,10 @@ struct ContactList: View {
                             Section(
                                 header: ContactGroupHeading(
                                     category: category,
-                                    showModal: $showModal,
-                                    categoryName: $selectedContactCategory
+                                    onEditClicked: { category in
+                                        showModal = true
+                                        selectedContactCategory = category.name
+                                    }
                                 )
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                 .foregroundColor(.blue)
@@ -37,7 +39,7 @@ struct ContactList: View {
                         selectedContactCategory = ""
                         showModal = true
                     } label: {
-                        // Add Group
+                        // Add Contact Category
                         Text("グループ追加")
                     }
                 )
@@ -45,8 +47,8 @@ struct ContactList: View {
                 if showModal {
                     ContactCategoryModal(
                         title: selectedContactCategory == ""
-                            ? "連絡先グループ追加"
-                            : "連絡先グループ名変更",
+                            ? "連絡先グループ追加" // Add group
+                            : "連絡先グループ名変更", // Edit group
                         action: {
                             showModal = false
                             selectedContactCategory = ""

@@ -159,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				A84D4A3D2A868EA100A15AB1 /* Start */,
-				A84D4A392A8688E800A15AB1 /* Register */,
 				A84D4A362A86868C00A15AB1 /* Login */,
 			);
 			path = Feature;
@@ -171,13 +170,6 @@
 				A84D4A372A8686BB00A15AB1 /* Login.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		A84D4A392A8688E800A15AB1 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 		A84D4A3A2A868A4700A15AB1 /* UI */ = {

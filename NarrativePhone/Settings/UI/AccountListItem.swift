@@ -3,7 +3,7 @@ import SwiftUI
 struct AccountListItem: View {
     let account : User
     
-    @State private var width: CGFloat? = 150
+    let labelWidth: CGFloat = 150
     
     var body: some View {
         Divider()
@@ -29,7 +29,7 @@ struct AccountListItem: View {
                 // NarrativePhone ID
                 HStack {
                     Text("ナラティブフォンID").font(.subheadline)
-                        .frame(width: width, alignment: .trailing)
+                        .frame(width: labelWidth, alignment: .trailing)
                         .lineLimit(1)
                     Text(":").font(.subheadline)
                     Text(account.narrativePhoneId ?? "").font(.subheadline)
@@ -38,7 +38,7 @@ struct AccountListItem: View {
                 // Fullname
                 HStack {
                     Text("表示").font(.subheadline)
-                        .frame(width: width, alignment: .trailing)
+                        .frame(width: labelWidth, alignment: .trailing)
                         .lineLimit(1)
                     Text(":").font(.subheadline)
                     Text(account.name).font(.subheadline)
@@ -47,7 +47,7 @@ struct AccountListItem: View {
                 // Description
                 HStack {
                     Text("説明").font(.subheadline)
-                        .frame(width: width, alignment: .trailing)
+                        .frame(width: labelWidth, alignment: .trailing)
                         .lineLimit(1)
                     Text(":").font(.subheadline)
                     Text(account.description ?? "").font(.subheadline)
@@ -56,7 +56,7 @@ struct AccountListItem: View {
                 // Email Address
                 HStack {
                     Text("メールアドレス").font(.subheadline)
-                        .frame(width: width, alignment: .trailing)
+                        .frame(width: labelWidth, alignment: .trailing)
                         .lineLimit(1)
                     Text(":").font(.subheadline)
                     Text(account.email).font(.subheadline)
@@ -75,7 +75,7 @@ struct AccountListItem: View {
                 // NarrativeBook ID
                 HStack {
                     Text("NBID").font(.subheadline)
-                        .frame(width: width, alignment: .trailing)
+                        .frame(width: labelWidth, alignment: .trailing)
                         .lineLimit(1)
                     Text(":").font(.subheadline)
                     Text(account.nbId ?? "").font(.subheadline)
@@ -84,7 +84,7 @@ struct AccountListItem: View {
                 // Author ID
                 HStack {
                     Text("AuthorID").font(.subheadline)
-                        .frame(width: width, alignment: .trailing)
+                        .frame(width: labelWidth, alignment: .trailing)
                         .lineLimit(1)
                     Text(":").font(.subheadline)
                     Text(account.nbAuthorId ?? "").font(.subheadline)
@@ -113,7 +113,7 @@ struct AccountListItem: View {
                 // Zoom ID
                 HStack{
                     Text("ID").font(.subheadline)
-                        .frame(width: width, alignment: .trailing)
+                        .frame(width: labelWidth, alignment: .trailing)
                         .lineLimit(1)
                     Text(":").font(.subheadline)
                     Text(account.zoomUserId).font(.body)

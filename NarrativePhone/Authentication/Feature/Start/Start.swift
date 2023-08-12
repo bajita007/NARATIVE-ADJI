@@ -5,10 +5,10 @@ struct Start: View {
         NavigationView {
             // TODO: center content vertically
             VStack {
-                // TODO: add logo
+                // TODO: add logo here
                 
                 Button(action: {
-                    print("Register clicked")
+                    print("Register clicked. Open webview")
                 }) {
                     Text("新規アカウント作成")
                         .frame(minWidth: 0, maxWidth: .infinity)
@@ -23,7 +23,7 @@ struct Start: View {
                 .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
                 
                 Button(action: {
-                    print("Login with NarrativeBook Account clicked")
+                    print("Login with NarrativeBook Account clicked. Open webview")
                 }) {
                     Text("ナラティブブック連携")
                         .frame(minWidth: 0, maxWidth: .infinity)

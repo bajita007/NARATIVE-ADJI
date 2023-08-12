@@ -3,9 +3,7 @@ import SwiftUI
 struct ContactGroupHeading: View {
     let category: AddressCategory
     
-    @Binding var showModal: Bool
-    
-    @Binding var categoryName: String
+    let onEditClicked: (_ category: AddressCategory) -> Void
     
     var body: some View {
         HStack {
@@ -16,9 +14,9 @@ struct ContactGroupHeading: View {
             Spacer()
             
             HStack {
+                // Edit category
                 Button {
-                    showModal = true
-                    categoryName = category.name
+                    onEditClicked(category)
                 } label: {
                     Image(systemName: "highlighter")
                         .resizable()
@@ -27,6 +25,7 @@ struct ContactGroupHeading: View {
                         .padding(5)
                 }
                 
+                // Import contact
                 NavigationLink(destination: ImportContacts(importTo: category)) {
                     Image(systemName: "person.line.dotted.person")
                         .resizable()
@@ -45,8 +44,9 @@ struct ContactGroupHeading_Previews: PreviewProvider {
     static var previews: some View {
         ContactGroupHeading(
             category: AddressCategory(id: 1, name: "仕事", userId: 1),
-            showModal: .constant(true),
-            categoryName: .constant("仕事")
+            onEditClicked: { category in
+                print(category.name)
+            }
         )
     }
 }
