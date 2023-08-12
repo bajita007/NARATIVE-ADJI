@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CallHistoryListItem: View {
-    let call : Call
+    let call : PhoneCall
     
     var statusColor: Color {
         get {
@@ -32,34 +32,68 @@ struct CallHistoryListItem: View {
     }
     
     var body: some View {
-        HStack {
-            Image(systemName: "phone.fill")
-                .resizable()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.white)
-                .padding(10)
-                .background(statusColor)
-                .clipShape(Circle())
-            
-            VStack(alignment: .leading) {
-                Text(call.contact)
-                    .font(.headline)
-                    .foregroundColor(statusColor)
+        Divider()
+        
+        VStack(alignment: .leading) {
+            HStack{
+                HStack{
+                    Text(call.ownerNarrativePhoneId)
+                        .font(.system(size: 12))
+                        .foregroundStyle(.gray)
+                    
+                    Image(systemName: call.status == 1
+                          ? "arrowshape.right.fill"
+                          : "arrowshape.backward.fill"
+                    )
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                        .foregroundStyle(.gray)
+                    
+                    Text(call.ownerNarrativePhoneId)
+                        .font(.system(size: 12))
+                        .foregroundStyle(call.status == 3 ? .red:.gray)
+                }
                 
-                Text(statusLabel)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                Spacer()
+                
+                Text(call.callTime)
             }
-            
-            Spacer()
             
             HStack {
-                Text(call.time)
-                    .foregroundColor(.secondary)
+                VStack(alignment: .leading) {
+                    Text(call.callerName)
+                        .font( .headline)
+
+                    Text(call.callerDescription)
+                        .foregroundStyle(.gray)
+                        .font(.system(size: 12))
+                }
+                .padding(.leading)
                 
-                Image(systemName: "info.circle")
-                    .foregroundColor(.blue)
+                Spacer()
+
+                Image(systemName: "phone.fill")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .background(.green)
+                    .clipShape(Circle())
+            }
+           
+            // Call participants
+            if (call.status != 3) {
+                Divider()
+                
+                VStack(alignment: .leading) {
+                    Text(call.callerName).font(.system(size: 16))
+                    Text(call.callerDescription).font(.system(size: 12))
+                }
+                .padding(.leading)
             }
         }
+        .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
+        
+        Divider()
     }
 }

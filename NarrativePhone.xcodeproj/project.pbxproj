@@ -42,7 +42,6 @@
 		A8F924382A8412B40080D2C6 /* FavoriteContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924372A8412B40080D2C6 /* FavoriteContactList.swift */; };
 		A8F9243E2A8414E80080D2C6 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9243D2A8414E80080D2C6 /* AccountList.swift */; };
 		A8F924432A84157F0080D2C6 /* CallHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924422A84157F0080D2C6 /* CallHistoryList.swift */; };
-		A8F924472A8415CE0080D2C6 /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924462A8415CE0080D2C6 /* Call.swift */; };
 		A8F9244A2A8415F70080D2C6 /* CallHistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924492A8415F70080D2C6 /* CallHistoryListItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,7 +102,6 @@
 		A8F924372A8412B40080D2C6 /* FavoriteContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContactList.swift; sourceTree = "<group>"; };
 		A8F9243D2A8414E80080D2C6 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
 		A8F924422A84157F0080D2C6 /* CallHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryList.swift; sourceTree = "<group>"; };
-		A8F924462A8415CE0080D2C6 /* Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
 		A8F924492A8415F70080D2C6 /* CallHistoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -501,18 +499,9 @@
 		A8F924442A8415BA0080D2C6 /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
-				A8F924452A8415C10080D2C6 /* Models */,
 				A8C8916F2A85245800AC2219 /* CallHistoryService.swift */,
 			);
 			path = DataAccess;
-			sourceTree = "<group>";
-		};
-		A8F924452A8415C10080D2C6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A8F924462A8415CE0080D2C6 /* Call.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		A8F924482A8415E70080D2C6 /* UI */ = {
@@ -666,7 +655,6 @@
 				A8BC71F82A838BE50088392C /* ContentView.swift in Sources */,
 				A88A2E2E2A849CF700201EAF /* User.swift in Sources */,
 				A84D4A422A8691B000A15AB1 /* FavoriteContactService.swift in Sources */,
-				A8F924472A8415CE0080D2C6 /* Call.swift in Sources */,
 				A8F9243E2A8414E80080D2C6 /* AccountList.swift in Sources */,
 				A84D4A332A86865300A15AB1 /* MainScreenView.swift in Sources */,
 				A8BC71F62A838BE50088392C /* NarrativePhoneApp.swift in Sources */,

@@ -1,22 +1,67 @@
+import Foundation
+
 enum CallHistoryListFilter: CaseIterable {
     case all
     case missed
 }
 
 class CallHistoryService {
-    func getCallHistoryList(filter: CallHistoryListFilter) -> [Call] {
+    let dateFormatter = DateFormatter()
+    
+    func getCallHistoryList(filter: CallHistoryListFilter) -> [PhoneCall] {
+        dateFormatter.dateFormat = "dd/MM/yy HH:mm:ss"
+        
         if (filter == .missed) {
             return [
-                Call(id: 3, contact: "山田太郎", time: "9:35 AM", status: 3),
-                Call(id: 4, contact: "山田太郎", time: "9:35 AM",status: 3)
+                PhoneCall(
+                    id: 1,
+                    ownerNarrativePhoneId: "yamada",
+                    ownerDeviceId: nil,
+                    triggeredAt: dateFormatter.date(from: "08/08/2023 20:30:00")!,
+                    callEndAt: dateFormatter.date(from: "08/08/2023 20:45:00"),
+                    zoomMeetingUrl: "zoom-url",
+                    callbackUrl: "callback-url"
+                ),
+                PhoneCall(
+                    id: 1,
+                    ownerNarrativePhoneId: "yamada",
+                    ownerDeviceId: nil,
+                    triggeredAt: dateFormatter.date(from: "08/08/2023 20:30:00")!,
+                    callEndAt: dateFormatter.date(from: "08/08/2023 20:45:00"),
+                    zoomMeetingUrl: "zoom-url",
+                    callbackUrl: "callback-url"
+                )
             ]
         }
         
         return [
-            Call(id: 1,contact: "山田太郎", time: "9:40 AM", status: 2),
-            Call(id: 2, contact: "山田太郎", time: "9:35 AM", status: 1),
-            Call(id: 3, contact: "山田太郎", time: "9:35 AM", status: 3),
-            Call(id: 4, contact: "山田太郎", time: "9:35 AM",status: 3)
+            PhoneCall(
+                id: 1,
+                ownerNarrativePhoneId: "yamada",
+                ownerDeviceId: nil,
+                triggeredAt: dateFormatter.date(from: "08/08/2023 20:30:00")!,
+                callEndAt: dateFormatter.date(from: "08/08/2023 20:45:00"),
+                zoomMeetingUrl: "zoom-url",
+                callbackUrl: "callback-url"
+            ),
+            PhoneCall(
+                id: 1,
+                ownerNarrativePhoneId: "yamada",
+                ownerDeviceId: nil,
+                triggeredAt: dateFormatter.date(from: "08/08/2023 20:30:00")!,
+                callEndAt: dateFormatter.date(from: "08/08/2023 20:45:00"),
+                zoomMeetingUrl: "zoom-url",
+                callbackUrl: "callback-url"
+            ),
+            PhoneCall(
+                id: 1,
+                ownerNarrativePhoneId: "yamada",
+                ownerDeviceId: nil,
+                triggeredAt: dateFormatter.date(from: "08/08/2023 20:30:00")!,
+                callEndAt: dateFormatter.date(from: "08/08/2023 20:45:00"),
+                zoomMeetingUrl: "zoom-url",
+                callbackUrl: "callback-url"
+            )
         ]
     }
 }

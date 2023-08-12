@@ -7,7 +7,7 @@ struct CallHistoryList: View {
     
     @State private var filter = 0
     
-    @State private var callHistory: [Call] = []
+    @State private var callHistory: [PhoneCall] = []
     
     func deleteItems(at offsets: IndexSet) {
         callHistory.remove(atOffsets: offsets)
@@ -15,14 +15,12 @@ struct CallHistoryList: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
+            ScrollView{
+                VStack(spacing: 0) {
                     ForEach(callHistory) { call in
                         CallHistoryListItem(call: call)
                     }
-                    .onDelete(perform: self.deleteItems)
                 }
-                .listStyle(GroupedListStyle())
             }
             .navigationTitle("履歴")
             .toolbar {
