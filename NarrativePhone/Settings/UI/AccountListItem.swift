@@ -1,20 +1,21 @@
 import SwiftUI
 
 struct AccountListItem: View {
-    let account : Account
+    let account : User
+    
+    @State private var width: CGFloat? = 150
     
     var body: some View {
-        VStack {
-            HStack {
-                Text(account.nama)
-                    .font(.headline)
+        Divider()
+        
+        VStack(alignment: .leading) {
+            HStack{
+                Text(account.accountName)
+                    .font(.system(size: 20).weight(.bold))
                 
                 Spacer()
                 
-                Button {
-                    print("Edit")
-                }
-                label:{
+                NavigationLink(destination: EditAccount(account: account)) {
                     Image(systemName: "highlighter")
                         .resizable()
                         .frame(width: 20, height: 20)
@@ -27,30 +28,38 @@ struct AccountListItem: View {
             Group {
                 // NarrativePhone ID
                 HStack {
-                    Text("ナラティブフォンID").font(.body)
-                    Spacer()
-                    Text(account.ddID).font(.body)
+                    Text("ナラティブフォンID").font(.subheadline)
+                        .frame(width: width, alignment: .trailing)
+                        .lineLimit(1)
+                    Text(":").font(.subheadline)
+                    Text(account.narrativePhoneId ?? "").font(.subheadline)
                 }
                 
                 // Fullname
                 HStack {
-                    Text("表示名").font(.body)
-                    Spacer()
-                    Text(account.dd1).font(.body)
+                    Text("表示").font(.subheadline)
+                        .frame(width: width, alignment: .trailing)
+                        .lineLimit(1)
+                    Text(":").font(.subheadline)
+                    Text(account.name).font(.subheadline)
                 }
                 
                 // Description
                 HStack {
-                    Text("説明").font(.body)
-                    Spacer()
-                    Text(account.dd2).font(.body)
+                    Text("説明").font(.subheadline)
+                        .frame(width: width, alignment: .trailing)
+                        .lineLimit(1)
+                    Text(":").font(.subheadline)
+                    Text(account.description ?? "").font(.subheadline)
                 }
                 
                 // Email Address
                 HStack {
-                    Text("メールアドレス").font(.body)
-                    Spacer()
-                    Text(account.email).font(.body)
+                    Text("メールアドレス").font(.subheadline)
+                        .frame(width: width, alignment: .trailing)
+                        .lineLimit(1)
+                    Text(":").font(.subheadline)
+                    Text(account.email).font(.subheadline)
                     
                 }
                 
@@ -65,16 +74,20 @@ struct AccountListItem: View {
                 
                 // NarrativeBook ID
                 HStack {
-                    Text("NBID").font(.body)
-                    Spacer()
-                    Text(account.NBID).font(.body)
+                    Text("NBID").font(.subheadline)
+                        .frame(width: width, alignment: .trailing)
+                        .lineLimit(1)
+                    Text(":").font(.subheadline)
+                    Text(account.nbId ?? "").font(.subheadline)
                 }
                 
                 // Author ID
                 HStack {
-                    Text("AuthorID").font(.body)
-                    Spacer()
-                    Text(account.authorId).font(.body)
+                    Text("AuthorID").font(.subheadline)
+                        .frame(width: width, alignment: .trailing)
+                        .lineLimit(1)
+                    Text(":").font(.subheadline)
+                    Text(account.nbAuthorId ?? "").font(.subheadline)
                 }
                 
                 // Open NarrativeBook
@@ -82,7 +95,7 @@ struct AccountListItem: View {
                     Text("ナラティブブック開く")
                         .font(.system(size: 11))
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                       
+                    
                     Image(systemName: "square.and.pencil")
                 }
                 .onTapGesture { print("author") }
@@ -99,24 +112,29 @@ struct AccountListItem: View {
                 
                 // Zoom ID
                 HStack{
-                    Text("ID").font(.body)
-                    Spacer()
-                    Text(account.zoomId).font(.body)
+                    Text("ID").font(.subheadline)
+                        .frame(width: width, alignment: .trailing)
+                        .lineLimit(1)
+                    Text(":").font(.subheadline)
+                    Text(account.zoomUserId).font(.body)
                     
                 }
                 
                 // Reconnect to Zoom
                 HStack{
-                Text("Zoomに再接続")
-                    .font(.system(size: 11))
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .onTapGesture { print("zoom") }
-                    .foregroundColor(Color.blue)
+                    Text("Zoomに再接続")
+                        .font(.system(size: 11))
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .onTapGesture { print("zoom") }
+                        .foregroundColor(Color.blue)
                     Image(systemName: "square.and.pencil")
                 }
                 .onTapGesture { print("author") }
                 .foregroundColor(Color.blue)
             }
         }
+        .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
+        
+        Divider()
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-struct PhoneDevice: Codable {
+struct PhoneDevice: Identifiable, Codable {
     let id: Int
     let userId: Int
     let phoneDeviceId: String

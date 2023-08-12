@@ -1,6 +1,6 @@
 import Foundation
 
-struct PhoneCallAttendee: Codable {
+struct PhoneCallAttendee: Identifiable, Codable {
     let id: Int
     let phoneCallId: Int
     let narrativePhoneId: String

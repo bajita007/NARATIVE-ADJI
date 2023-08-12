@@ -17,6 +17,8 @@
 		A84D4A4C2A869D5A00A15AB1 /* ContactCategoryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A4B2A869D5A00A15AB1 /* ContactCategoryModal.swift */; };
 		A84D4A4E2A86A93300A15AB1 /* ChangeCategoryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A4D2A86A93300A15AB1 /* ChangeCategoryModal.swift */; };
 		A84D4A512A86B28F00A15AB1 /* ImportContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A502A86B28F00A15AB1 /* ImportContacts.swift */; };
+		A84D4A542A8719E400A15AB1 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A532A8719E400A15AB1 /* AccountService.swift */; };
+		A84D4A562A871C5F00A15AB1 /* EditAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A552A871C5F00A15AB1 /* EditAccount.swift */; };
 		A88A2E2E2A849CF700201EAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2D2A849CF700201EAF /* User.swift */; };
 		A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */; };
 		A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E312A849D4700201EAF /* AddressCategory.swift */; };
@@ -32,11 +34,9 @@
 		A8BC72142A838BE60088392C /* NarrativePhoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC72132A838BE60088392C /* NarrativePhoneUITestsLaunchTests.swift */; };
 		A8C891702A85245800AC2219 /* CallHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8916F2A85245800AC2219 /* CallHistoryService.swift */; };
 		A8F9241B2A84032C0080D2C6 /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9241A2A84032C0080D2C6 /* ContactList.swift */; };
-		A8F924202A8403ED0080D2C6 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9241F2A8403ED0080D2C6 /* Contact.swift */; };
 		A8F924232A84043C0080D2C6 /* ContactDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924222A84043C0080D2C6 /* ContactDetail.swift */; };
 		A8F924262A8405D50080D2C6 /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924252A8405D50080D2C6 /* ContactListItem.swift */; };
 		A8F9242B2A8406DF0080D2C6 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9242A2A8406DF0080D2C6 /* AccountSettings.swift */; };
-		A8F9242D2A84072F0080D2C6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9242C2A84072F0080D2C6 /* Account.swift */; };
 		A8F924302A84079C0080D2C6 /* AccountListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9242F2A84079C0080D2C6 /* AccountListItem.swift */; };
 		A8F924322A840A7A0080D2C6 /* ContactGroupHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924312A840A7A0080D2C6 /* ContactGroupHeading.swift */; };
 		A8F924382A8412B40080D2C6 /* FavoriteContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924372A8412B40080D2C6 /* FavoriteContactList.swift */; };
@@ -73,6 +73,8 @@
 		A84D4A4B2A869D5A00A15AB1 /* ContactCategoryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCategoryModal.swift; sourceTree = "<group>"; };
 		A84D4A4D2A86A93300A15AB1 /* ChangeCategoryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCategoryModal.swift; sourceTree = "<group>"; };
 		A84D4A502A86B28F00A15AB1 /* ImportContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportContacts.swift; sourceTree = "<group>"; };
+		A84D4A532A8719E400A15AB1 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		A84D4A552A871C5F00A15AB1 /* EditAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccount.swift; sourceTree = "<group>"; };
 		A88A2E2D2A849CF700201EAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDevice.swift; sourceTree = "<group>"; };
 		A88A2E312A849D4700201EAF /* AddressCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCategory.swift; sourceTree = "<group>"; };
@@ -92,11 +94,9 @@
 		A8BC72132A838BE60088392C /* NarrativePhoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativePhoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A8C8916F2A85245800AC2219 /* CallHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryService.swift; sourceTree = "<group>"; };
 		A8F9241A2A84032C0080D2C6 /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
-		A8F9241F2A8403ED0080D2C6 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		A8F924222A84043C0080D2C6 /* ContactDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetail.swift; sourceTree = "<group>"; };
 		A8F924252A8405D50080D2C6 /* ContactListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItem.swift; sourceTree = "<group>"; };
 		A8F9242A2A8406DF0080D2C6 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
-		A8F9242C2A84072F0080D2C6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		A8F9242F2A84079C0080D2C6 /* AccountListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListItem.swift; sourceTree = "<group>"; };
 		A8F924312A840A7A0080D2C6 /* ContactGroupHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGroupHeading.swift; sourceTree = "<group>"; };
 		A8F924372A8412B40080D2C6 /* FavoriteContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContactList.swift; sourceTree = "<group>"; };
@@ -237,6 +237,14 @@
 			path = Import;
 			sourceTree = "<group>";
 		};
+		A84D4A522A8719C300A15AB1 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A532A8719E400A15AB1 /* AccountService.swift */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
 		A8BC71E92A838BE50088392C = {
 			isa = PBXGroup;
 			children = (
@@ -343,8 +351,6 @@
 		A8F9241E2A8403E00080D2C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A8F9241F2A8403ED0080D2C6 /* Contact.swift */,
-				A8F9242C2A84072F0080D2C6 /* Account.swift */,
 				A88A2E372A849D9D00201EAF /* PhoneCallAttendee.swift */,
 				A88A2E352A849D8400201EAF /* PhoneCall.swift */,
 				A88A2E332A849D5F00201EAF /* AddressEntry.swift */,
@@ -375,6 +381,7 @@
 		A8F924272A8406B10080D2C6 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A84D4A522A8719C300A15AB1 /* DataAccess */,
 				A8F9242E2A8407890080D2C6 /* UI */,
 				A8F924282A8406B70080D2C6 /* Feature */,
 			);
@@ -409,6 +416,7 @@
 		A8F924332A8412310080D2C6 /* EditAccount */ = {
 			isa = PBXGroup;
 			children = (
+				A84D4A552A871C5F00A15AB1 /* EditAccount.swift */,
 			);
 			path = EditAccount;
 			sourceTree = "<group>";
@@ -642,12 +650,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8F924202A8403ED0080D2C6 /* Contact.swift in Sources */,
 				A8F9244A2A8415F70080D2C6 /* CallHistoryListItem.swift in Sources */,
 				A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */,
 				A8F9241B2A84032C0080D2C6 /* ContactList.swift in Sources */,
+				A84D4A542A8719E400A15AB1 /* AccountService.swift in Sources */,
 				A84D4A482A8696B900A15AB1 /* ContactService.swift in Sources */,
 				A84D4A3F2A868EC700A15AB1 /* Start.swift in Sources */,
+				A84D4A562A871C5F00A15AB1 /* EditAccount.swift in Sources */,
 				A8F924302A84079C0080D2C6 /* AccountListItem.swift in Sources */,
 				A8F924322A840A7A0080D2C6 /* ContactGroupHeading.swift in Sources */,
 				A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */,
@@ -665,7 +674,6 @@
 				A84D4A3C2A868AC200A15AB1 /* ImportAccountOptionScreen.swift in Sources */,
 				A8F924432A84157F0080D2C6 /* CallHistoryList.swift in Sources */,
 				A8C891702A85245800AC2219 /* CallHistoryService.swift in Sources */,
-				A8F9242D2A84072F0080D2C6 /* Account.swift in Sources */,
 				A84D4A4C2A869D5A00A15AB1 /* ContactCategoryModal.swift in Sources */,
 				A84D4A4E2A86A93300A15AB1 /* ChangeCategoryModal.swift in Sources */,
 				A8F924382A8412B40080D2C6 /* FavoriteContactList.swift in Sources */,
