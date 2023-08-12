@@ -39,3 +39,21 @@ struct FavoriteContactListItem: View {
         .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
     }
 }
+
+struct FavoriteContactListItem_Previews: PreviewProvider {
+    static var previews: some View {
+        FavoriteContactListItem(
+            contact: AddressEntry(
+                id: 1,
+                addressCategoryId: 1,
+                name: "山田太郎",
+                narrativePhoneId: "aasdflj",
+                nbAuthorId: nil,
+                nbOrganizationId: 1,
+                description: "クロースフィールド株式会社　代表",
+                iconImgPath: nil,
+                favourite: true
+            )
+        )
+    }
+}

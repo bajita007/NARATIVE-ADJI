@@ -40,3 +40,13 @@ struct ContactGroupHeading: View {
         .background(Color.gray.opacity(0.2))
     }
 }
+
+struct ContactGroupHeading_Previews: PreviewProvider {
+    static var previews: some View {
+        ContactGroupHeading(
+            category: AddressCategory(id: 1, name: "仕事", userId: 1),
+            showModal: .constant(true),
+            categoryName: .constant("仕事")
+        )
+    }
+}

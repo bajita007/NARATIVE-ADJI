@@ -88,3 +88,16 @@ struct ContactCategoryModal: View {
         }
     }
 }
+
+struct ContactCategoryModal_Previews: PreviewProvider {
+    static var previews: some View {
+        ContactCategoryModal(
+            title: "連絡先グループ追加",
+            action: {
+                
+            },
+            isActive: .constant(true),
+            categoryName: .constant("")
+        )
+    }
+}

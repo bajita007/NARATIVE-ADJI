@@ -138,3 +138,27 @@ struct AccountListItem: View {
         Divider()
     }
 }
+
+struct AccountListItem_Previews: PreviewProvider {
+    static var previews: some View {
+        AccountListItem(
+            account: User(
+                id: 1,
+                name: "山田太郎",
+                accountName: "個人ようアカウント",
+                email: "yamada@example.co.jp",
+                nbId: "narrative-book-user",
+                nbAuthorId:nil,
+                nbOrganizationId: nil,
+                narrativePhoneId: "yamada",
+                zoomUserId: "yamadataro",
+                zoomUserLastName: "山田",
+                zoomUserFirstName: "太郎",
+                zoomUserEmail: "yamada@example.co.jp",
+                description: "クロースフィールド株式会社　代表",
+                iconImg:nil,
+                state: 1
+            )
+        )
+    }
+}

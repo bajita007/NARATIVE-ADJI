@@ -97,3 +97,19 @@ struct CallHistoryListItem: View {
         Divider()
     }
 }
+
+struct CallHistoryListItem_Previews: PreviewProvider {
+    static var previews: some View {
+        CallHistoryListItem(
+            call: PhoneCall(
+                id: 1,
+                ownerNarrativePhoneId: "yamada",
+                ownerDeviceId: nil,
+                triggeredAt: Date(),
+                callEndAt: Date(),
+                zoomMeetingUrl: "zoom-url",
+                callbackUrl: "callback-url"
+            )
+        )
+    }
+}

@@ -36,3 +36,21 @@ struct ContactListItem: View {
         }
     }
 }
+
+struct ContactListItem_Previews: PreviewProvider {
+    static var previews: some View {
+        ContactListItem(
+            contact: AddressEntry(
+                id: 2,
+                addressCategoryId: 1,
+                name: "山田太郎",
+                narrativePhoneId: "aasdflj",
+                nbAuthorId: nil,
+                nbOrganizationId: 1,
+                description: "クロースフィールド株式会社　代表",
+                iconImgPath: nil,
+                favourite: true
+            )
+        )
+    }
+}
