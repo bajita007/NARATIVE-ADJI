@@ -17,7 +17,7 @@ struct ContactList: View {
                         ForEach(contactCategories) { category in
                             Section(
                                 header: ContactGroupHeading(
-                                    title: category.name,
+                                    category: category,
                                     showModal: $showModal,
                                     categoryName: $selectedContactCategory
                                 )

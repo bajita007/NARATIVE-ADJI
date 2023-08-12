@@ -16,6 +16,7 @@
 		A84D4A482A8696B900A15AB1 /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A472A8696B900A15AB1 /* ContactService.swift */; };
 		A84D4A4C2A869D5A00A15AB1 /* ContactCategoryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A4B2A869D5A00A15AB1 /* ContactCategoryModal.swift */; };
 		A84D4A4E2A86A93300A15AB1 /* ChangeCategoryModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A4D2A86A93300A15AB1 /* ChangeCategoryModal.swift */; };
+		A84D4A512A86B28F00A15AB1 /* ImportContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A502A86B28F00A15AB1 /* ImportContacts.swift */; };
 		A88A2E2E2A849CF700201EAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2D2A849CF700201EAF /* User.swift */; };
 		A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */; };
 		A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E312A849D4700201EAF /* AddressCategory.swift */; };
@@ -72,6 +73,7 @@
 		A84D4A472A8696B900A15AB1 /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 		A84D4A4B2A869D5A00A15AB1 /* ContactCategoryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCategoryModal.swift; sourceTree = "<group>"; };
 		A84D4A4D2A86A93300A15AB1 /* ChangeCategoryModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCategoryModal.swift; sourceTree = "<group>"; };
+		A84D4A502A86B28F00A15AB1 /* ImportContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportContacts.swift; sourceTree = "<group>"; };
 		A88A2E2D2A849CF700201EAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDevice.swift; sourceTree = "<group>"; };
 		A88A2E312A849D4700201EAF /* AddressCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCategory.swift; sourceTree = "<group>"; };
@@ -229,6 +231,14 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		A84D4A4F2A86B27900A15AB1 /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				A84D4A502A86B28F00A15AB1 /* ImportContacts.swift */,
+			);
+			path = Import;
+			sourceTree = "<group>";
+		};
 		A8BC71E92A838BE50088392C = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +317,7 @@
 		A8F924182A84030A0080D2C6 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				A84D4A4F2A86B27900A15AB1 /* Import */,
 				A84D4A4A2A869D4100A15AB1 /* Category */,
 				A8F924212A8404280080D2C6 /* Detail */,
 				A8F924192A8403170080D2C6 /* List */,
@@ -651,6 +662,7 @@
 				A8F924302A84079C0080D2C6 /* AccountListItem.swift in Sources */,
 				A8F924322A840A7A0080D2C6 /* ContactGroupHeading.swift in Sources */,
 				A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */,
+				A84D4A512A86B28F00A15AB1 /* ImportContacts.swift in Sources */,
 				A8BC71F82A838BE50088392C /* ContentView.swift in Sources */,
 				A88A2E2E2A849CF700201EAF /* User.swift in Sources */,
 				A84D4A422A8691B000A15AB1 /* FavoriteContactService.swift in Sources */,

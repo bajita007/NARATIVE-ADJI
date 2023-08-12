@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContactGroupHeading: View {
-    let title:String
+    let category: AddressCategory
     
     @Binding var showModal: Bool
     
@@ -9,7 +9,7 @@ struct ContactGroupHeading: View {
     
     var body: some View {
         HStack {
-            Text(title)
+            Text(category.name)
                 .font(.headline)
                 .colorMultiply(Color.black)
             
@@ -18,7 +18,7 @@ struct ContactGroupHeading: View {
             HStack {
                 Button {
                     showModal = true
-                    categoryName = title
+                    categoryName = category.name
                 } label: {
                     Image(systemName: "highlighter")
                         .resizable()
@@ -27,9 +27,7 @@ struct ContactGroupHeading: View {
                         .padding(5)
                 }
                 
-                Button{
-                    print("Switch")
-                } label: {
+                NavigationLink(destination: ImportContacts(importTo: category)) {
                     Image(systemName: "person.line.dotted.person")
                         .resizable()
                         .frame(width: 35, height: 20)
@@ -37,7 +35,6 @@ struct ContactGroupHeading: View {
                         .padding(5)
                 }
             }
-            
         }
         .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
         .background(Color.gray.opacity(0.2))
