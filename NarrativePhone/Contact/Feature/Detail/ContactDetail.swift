@@ -165,7 +165,7 @@ struct ContactDetail_Previews: PreviewProvider {
             nbAuthorId: nil,
             nbOrganizationId: 1,
             description: "クロースフィールド株式会社　代表",
-            iconImgPath: nil,
+            iconImagePath: nil,
             favourite: true
         ))
     }

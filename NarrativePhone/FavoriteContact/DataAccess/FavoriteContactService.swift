@@ -9,7 +9,7 @@ class FavoriteContactService {
                 nbAuthorId: nil,
                 nbOrganizationId: 1,
                 description: "クロースフィールド株式会社　代表",
-                iconImgPath: nil,
+                iconImagePath: nil,
                 favourite: true
             ),
             AddressEntry(
@@ -20,7 +20,7 @@ class FavoriteContactService {
                 nbAuthorId: nil,
                 nbOrganizationId: 1,
                 description: "クロースフィールド株式会社　代表",
-                iconImgPath: nil,
+                iconImagePath: nil,
                 favourite: true
             )
         ]
