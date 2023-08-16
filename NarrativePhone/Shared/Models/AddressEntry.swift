@@ -9,6 +9,6 @@ struct AddressEntry: Identifiable, Codable {
     let nbAuthorId: String?
     let nbOrganizationId: Int
     let description: String?
-    let iconImgPath: String?
+    let iconImagePath: String?
     let favourite: Bool
 }

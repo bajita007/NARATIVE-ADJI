@@ -19,6 +19,12 @@
 		A84D4A512A86B28F00A15AB1 /* ImportContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A502A86B28F00A15AB1 /* ImportContacts.swift */; };
 		A84D4A542A8719E400A15AB1 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A532A8719E400A15AB1 /* AccountService.swift */; };
 		A84D4A562A871C5F00A15AB1 /* EditAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A552A871C5F00A15AB1 /* EditAccount.swift */; };
+		A860E0372A8C70C8007100CE /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E0362A8C70C8007100CE /* AuthenticationAPI.swift */; };
+		A860E0392A8C73CD007100CE /* SystemAdminAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E0382A8C73CD007100CE /* SystemAdminAPI.swift */; };
+		A860E03B2A8C76AE007100CE /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E03A2A8C76AE007100CE /* UserAPI.swift */; };
+		A860E03D2A8C8AD3007100CE /* PhoneDeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E03C2A8C8AD3007100CE /* PhoneDeviceAPI.swift */; };
+		A860E03F2A8C8EDB007100CE /* ContactAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E03E2A8C8EDB007100CE /* ContactAPI.swift */; };
+		A860E0412A8C9921007100CE /* CallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E0402A8C9921007100CE /* CallAPI.swift */; };
 		A88A2E2E2A849CF700201EAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2D2A849CF700201EAF /* User.swift */; };
 		A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */; };
 		A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E312A849D4700201EAF /* AddressCategory.swift */; };
@@ -75,6 +81,12 @@
 		A84D4A502A86B28F00A15AB1 /* ImportContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportContacts.swift; sourceTree = "<group>"; };
 		A84D4A532A8719E400A15AB1 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		A84D4A552A871C5F00A15AB1 /* EditAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccount.swift; sourceTree = "<group>"; };
+		A860E0362A8C70C8007100CE /* AuthenticationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
+		A860E0382A8C73CD007100CE /* SystemAdminAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAdminAPI.swift; sourceTree = "<group>"; };
+		A860E03A2A8C76AE007100CE /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		A860E03C2A8C8AD3007100CE /* PhoneDeviceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDeviceAPI.swift; sourceTree = "<group>"; };
+		A860E03E2A8C8EDB007100CE /* ContactAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPI.swift; sourceTree = "<group>"; };
+		A860E0402A8C9921007100CE /* CallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPI.swift; sourceTree = "<group>"; };
 		A88A2E2D2A849CF700201EAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDevice.swift; sourceTree = "<group>"; };
 		A88A2E312A849D4700201EAF /* AddressCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCategory.swift; sourceTree = "<group>"; };
@@ -349,6 +361,12 @@
 				A88A2E2D2A849CF700201EAF /* User.swift */,
 				A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */,
 				A88A2E312A849D4700201EAF /* AddressCategory.swift */,
+				A860E0362A8C70C8007100CE /* AuthenticationAPI.swift */,
+				A860E0382A8C73CD007100CE /* SystemAdminAPI.swift */,
+				A860E03A2A8C76AE007100CE /* UserAPI.swift */,
+				A860E03E2A8C8EDB007100CE /* ContactAPI.swift */,
+				A860E0402A8C9921007100CE /* CallAPI.swift */,
+				A860E03C2A8C8AD3007100CE /* PhoneDeviceAPI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -646,21 +664,27 @@
 				A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */,
 				A8F9241B2A84032C0080D2C6 /* ContactList.swift in Sources */,
 				A84D4A542A8719E400A15AB1 /* AccountService.swift in Sources */,
+				A860E03D2A8C8AD3007100CE /* PhoneDeviceAPI.swift in Sources */,
 				A84D4A482A8696B900A15AB1 /* ContactService.swift in Sources */,
 				A84D4A3F2A868EC700A15AB1 /* Start.swift in Sources */,
+				A860E0372A8C70C8007100CE /* AuthenticationAPI.swift in Sources */,
 				A84D4A562A871C5F00A15AB1 /* EditAccount.swift in Sources */,
 				A8F924302A84079C0080D2C6 /* AccountListItem.swift in Sources */,
+				A860E0412A8C9921007100CE /* CallAPI.swift in Sources */,
+				A860E0392A8C73CD007100CE /* SystemAdminAPI.swift in Sources */,
 				A8F924322A840A7A0080D2C6 /* ContactGroupHeading.swift in Sources */,
 				A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */,
 				A84D4A512A86B28F00A15AB1 /* ImportContacts.swift in Sources */,
 				A8BC71F82A838BE50088392C /* ContentView.swift in Sources */,
 				A88A2E2E2A849CF700201EAF /* User.swift in Sources */,
 				A84D4A422A8691B000A15AB1 /* FavoriteContactService.swift in Sources */,
+				A860E03F2A8C8EDB007100CE /* ContactAPI.swift in Sources */,
 				A8F9243E2A8414E80080D2C6 /* AccountList.swift in Sources */,
 				A84D4A332A86865300A15AB1 /* MainScreenView.swift in Sources */,
 				A8BC71F62A838BE50088392C /* NarrativePhoneApp.swift in Sources */,
 				A88A2E342A849D5F00201EAF /* AddressEntry.swift in Sources */,
 				A88A2E382A849D9D00201EAF /* PhoneCallAttendee.swift in Sources */,
+				A860E03B2A8C76AE007100CE /* UserAPI.swift in Sources */,
 				A84D4A382A8686BB00A15AB1 /* Login.swift in Sources */,
 				A8F9242B2A8406DF0080D2C6 /* AccountSettings.swift in Sources */,
 				A84D4A3C2A868AC200A15AB1 /* ImportAccountOptionScreen.swift in Sources */,
