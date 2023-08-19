@@ -39,8 +39,8 @@
 		A8BC72122A838BE60088392C /* NarrativePhoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC72112A838BE60088392C /* NarrativePhoneUITests.swift */; };
 		A8BC72142A838BE60088392C /* NarrativePhoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC72132A838BE60088392C /* NarrativePhoneUITestsLaunchTests.swift */; };
 		A8C078BC2A8F407A008EDCC1 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A8C078BB2A8F407A008EDCC1 /* FirebaseAppDistribution-Beta */; };
-		A8C078BE2A8F419D008EDCC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8C078BD2A8F419D008EDCC1 /* GoogleService-Info.plist */; };
 		A8C891702A85245800AC2219 /* CallHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8916F2A85245800AC2219 /* CallHistoryService.swift */; };
+		A8E180CA2A8FBFE3003BCB4D /* CreateCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E180C92A8FBFE3003BCB4D /* CreateCall.swift */; };
 		A8F9241B2A84032C0080D2C6 /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9241A2A84032C0080D2C6 /* ContactList.swift */; };
 		A8F924232A84043C0080D2C6 /* ContactDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924222A84043C0080D2C6 /* ContactDetail.swift */; };
 		A8F924262A8405D50080D2C6 /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924252A8405D50080D2C6 /* ContactListItem.swift */; };
@@ -106,8 +106,8 @@
 		A8BC720D2A838BE60088392C /* NarrativePhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NarrativePhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8BC72112A838BE60088392C /* NarrativePhoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativePhoneUITests.swift; sourceTree = "<group>"; };
 		A8BC72132A838BE60088392C /* NarrativePhoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativePhoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A8C078BD2A8F419D008EDCC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8C8916F2A85245800AC2219 /* CallHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryService.swift; sourceTree = "<group>"; };
+		A8E180C92A8FBFE3003BCB4D /* CreateCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCall.swift; sourceTree = "<group>"; };
 		A8F9241A2A84032C0080D2C6 /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
 		A8F924222A84043C0080D2C6 /* ContactDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetail.swift; sourceTree = "<group>"; };
 		A8F924252A8405D50080D2C6 /* ContactListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItem.swift; sourceTree = "<group>"; };
@@ -256,7 +256,6 @@
 		A8BC71E92A838BE50088392C = {
 			isa = PBXGroup;
 			children = (
-				A8C078BD2A8F419D008EDCC1 /* GoogleService-Info.plist */,
 				A8BC71F42A838BE50088392C /* NarrativePhone */,
 				A8BC72062A838BE60088392C /* NarrativePhoneTests */,
 				A8BC72102A838BE60088392C /* NarrativePhoneUITests */,
@@ -277,6 +276,7 @@
 		A8BC71F42A838BE50088392C /* NarrativePhone */ = {
 			isa = PBXGroup;
 			children = (
+				A8E180C62A8FBFC7003BCB4D /* Call */,
 				A84D4A342A86867F00A15AB1 /* Authentication */,
 				A84D4A302A8685F900A15AB1 /* MainScreen */,
 				A8F9243F2A84155C0080D2C6 /* CallHistory */,
@@ -327,6 +327,30 @@
 				A8F924182A84030A0080D2C6 /* Feature */,
 			);
 			path = Contact;
+			sourceTree = "<group>";
+		};
+		A8E180C62A8FBFC7003BCB4D /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				A8E180C72A8FBFCE003BCB4D /* Feature */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
+		A8E180C72A8FBFCE003BCB4D /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A8E180C82A8FBFD3003BCB4D /* Create */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		A8E180C82A8FBFD3003BCB4D /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				A8E180C92A8FBFE3003BCB4D /* CreateCall.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 		A8F924182A84030A0080D2C6 /* Feature */ = {
@@ -647,7 +671,6 @@
 			files = (
 				A8BC71FE2A838BE60088392C /* Preview Assets.xcassets in Resources */,
 				A8BC71FA2A838BE60088392C /* Assets.xcassets in Resources */,
-				A8C078BE2A8F419D008EDCC1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +710,7 @@
 				A8F924322A840A7A0080D2C6 /* ContactGroupHeading.swift in Sources */,
 				A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */,
 				A84D4A512A86B28F00A15AB1 /* ImportContacts.swift in Sources */,
+				A8E180CA2A8FBFE3003BCB4D /* CreateCall.swift in Sources */,
 				A8BC71F82A838BE50088392C /* ContentView.swift in Sources */,
 				A88A2E2E2A849CF700201EAF /* User.swift in Sources */,
 				A84D4A422A8691B000A15AB1 /* FavoriteContactService.swift in Sources */,
@@ -795,7 +819,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -848,7 +872,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;

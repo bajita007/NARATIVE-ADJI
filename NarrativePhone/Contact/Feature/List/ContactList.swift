@@ -23,7 +23,7 @@ struct ContactList: View {
                                         selectedContactCategory = category.name
                                     }
                                 )
-                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                                .padding(.zero)
                                 .foregroundColor(.blue)
                             ) {
                                 ForEach(service.getByCategory(categoryId: category.id)) { contact in
