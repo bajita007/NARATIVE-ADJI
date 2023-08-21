@@ -6,16 +6,16 @@ struct ImportContacts: View {
     @ObservedObject var vm = ContactViewModel()
     
     var body: some View {
-        GeometryReader { _ in
-            switch vm.state {
-            case .idle:
-                Color.clear.onAppear {
-                    vm.getContactCategories()
-                }
-            case .loading:
-                LoadingView()
-            case .success(let contactCategories):
-                ZStack {
+        ZStack {
+            GeometryReader { _ in
+                switch vm.state {
+                case .idle:
+                    Color.clear.onAppear {
+                        vm.getContactCategories()
+                    }
+                case .loading:
+                    LoadingView()
+                case .success(let contactCategories):
                     VStack {
                         HStack {
                             Image(systemName:"checkmark")
@@ -59,7 +59,6 @@ struct ImportContacts: View {
                                         }
                                         .padding(EdgeInsets(top: 8, leading: 40, bottom: 8, trailing: 20))
                                     }
-                                    
                                 }
                             }
                         }
@@ -88,11 +87,11 @@ struct ImportContacts: View {
                            .cornerRadius(25)
                            .padding()
                     }
+                case .failure(let error):
+                    ErrorView(error: error)
                 }
-                .navigationTitle("連絡先インポート")
-            case .failure(let error):
-                ErrorView(error: error)
             }
+            .navigationTitle("連絡先インポート")
         }
     }
 }
