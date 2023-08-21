@@ -27,6 +27,9 @@
 		A860E03F2A8C8EDB007100CE /* ContactAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E03E2A8C8EDB007100CE /* ContactAPI.swift */; };
 		A860E0412A8C9921007100CE /* CallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E0402A8C9921007100CE /* CallAPI.swift */; };
 		A8629D702A933DF50083101A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8629D6F2A933DF50083101A /* GoogleService-Info.plist */; };
+		A8629D722A9344880083101A /* CallHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8629D712A9344880083101A /* CallHistoryViewModel.swift */; };
+		A8629D742A9346630083101A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8629D732A9346630083101A /* LoadingView.swift */; };
+		A8629D762A9347000083101A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8629D752A9347000083101A /* ErrorView.swift */; };
 		A88A2E2E2A849CF700201EAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2D2A849CF700201EAF /* User.swift */; };
 		A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */; };
 		A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E312A849D4700201EAF /* AddressCategory.swift */; };
@@ -93,6 +96,9 @@
 		A860E03E2A8C8EDB007100CE /* ContactAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPI.swift; sourceTree = "<group>"; };
 		A860E0402A8C9921007100CE /* CallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPI.swift; sourceTree = "<group>"; };
 		A8629D6F2A933DF50083101A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A8629D712A9344880083101A /* CallHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryViewModel.swift; sourceTree = "<group>"; };
+		A8629D732A9346630083101A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A8629D752A9347000083101A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		A88A2E2D2A849CF700201EAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDevice.swift; sourceTree = "<group>"; };
 		A88A2E312A849D4700201EAF /* AddressCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCategory.swift; sourceTree = "<group>"; };
@@ -503,6 +509,8 @@
 		A8F924392A84138F0080D2C6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A8629D732A9346630083101A /* LoadingView.swift */,
+				A8629D752A9347000083101A /* ErrorView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -561,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				A8C8916F2A85245800AC2219 /* CallHistoryService.swift */,
+				A8629D712A9344880083101A /* CallHistoryViewModel.swift */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -725,6 +734,7 @@
 				A860E0392A8C73CD007100CE /* SystemAdminAPI.swift in Sources */,
 				A8F924322A840A7A0080D2C6 /* ContactGroupHeading.swift in Sources */,
 				A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */,
+				A8629D722A9344880083101A /* CallHistoryViewModel.swift in Sources */,
 				A84D4A512A86B28F00A15AB1 /* ImportContacts.swift in Sources */,
 				A8E180CA2A8FBFE3003BCB4D /* CreateCall.swift in Sources */,
 				A8BC71F82A838BE50088392C /* ContentView.swift in Sources */,
@@ -734,7 +744,9 @@
 				A8F9243E2A8414E80080D2C6 /* AccountList.swift in Sources */,
 				A84D4A332A86865300A15AB1 /* MainScreenView.swift in Sources */,
 				A8BC71F62A838BE50088392C /* NarrativePhoneApp.swift in Sources */,
+				A8629D762A9347000083101A /* ErrorView.swift in Sources */,
 				A88A2E342A849D5F00201EAF /* AddressEntry.swift in Sources */,
+				A8629D742A9346630083101A /* LoadingView.swift in Sources */,
 				A88A2E382A849D9D00201EAF /* PhoneCallAttendee.swift in Sources */,
 				A860E03B2A8C76AE007100CE /* UserAPI.swift in Sources */,
 				A84D4A382A8686BB00A15AB1 /* Login.swift in Sources */,

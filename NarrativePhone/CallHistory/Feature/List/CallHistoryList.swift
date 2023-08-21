@@ -3,23 +3,30 @@ import SwiftUI
 struct CallHistoryList: View {
     private let tabs = ["すべて", "不在着信"]
     
-    private let service = CallHistoryService()
-    
     @State private var filter = 0
     
-    @State private var callHistory: [PhoneCall] = []
-    
-    func deleteItems(at offsets: IndexSet) {
-        callHistory.remove(atOffsets: offsets)
-    }
-    
+    @ObservedObject var vm = CallHistoryViewModel()
+
     var body: some View {
         NavigationView {
-            ScrollView{
-                VStack(spacing: 0) {
-                    ForEach(callHistory) { call in
-                        CallHistoryListItem(call: call)
+            GeometryReader { _ in
+                switch vm.state {
+                case .idle:
+                    Color.clear.onAppear {
+                        vm.getAll(filter: .all)
                     }
+                case .loading:
+                    LoadingView()
+                case .success(let items):
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            ForEach(items) { call in
+                                CallHistoryListItem(call: call)
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    ErrorView(error: error)
                 }
             }
             .navigationTitle("履歴")
@@ -34,7 +41,7 @@ struct CallHistoryList: View {
                         .frame(width: 200)
                         .pickerStyle(SegmentedPickerStyle())
                         .onChange(of: filter) { newValue in
-                            self.callHistory = service.getCallHistoryList(
+                            vm.getAll(
                                 filter: newValue == 0
                                     ? CallHistoryListFilter.all
                                     : CallHistoryListFilter.missed)
@@ -42,9 +49,6 @@ struct CallHistoryList: View {
                     }
                 }
             }
-        }
-        .task {
-            self.callHistory = service.getCallHistoryList(filter: .all)
         }
     }
 }
