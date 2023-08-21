@@ -1,23 +1,31 @@
 import SwiftUI
 
 struct FavoriteContactList: View {
-    private let service = FavoriteContactService()
-    
-    @State private var contacts: [AddressEntry] = []
+    @ObservedObject var vm = FavoriteContactViewModel()
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical) {
-                VStack {
-                    ForEach(contacts) { item in
-                        FavoriteContactListItem(contact: item)
+            GeometryReader { _ in
+                switch vm.state {
+                case .idle:
+                    Color.clear.onAppear {
+                        vm.getAll()
                     }
-                    .navigationTitle("お気に入り")
+                case .loading:
+                    LoadingView()
+                case .success(let items):
+                    ScrollView(.vertical) {
+                        VStack {
+                            ForEach(items) { item in
+                                FavoriteContactListItem(contact: item)
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    ErrorView(error: error)
                 }
             }
-        }
-        .task {
-            self.contacts = service.getAll()
+            .navigationTitle("お気に入り")
         }
     }
 }
