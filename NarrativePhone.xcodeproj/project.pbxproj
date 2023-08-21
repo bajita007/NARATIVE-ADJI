@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A813B04D2A9338F500E38272 /* SelectedTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813B04C2A9338F500E38272 /* SelectedTab.swift */; };
 		A84D4A332A86865300A15AB1 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A322A86865300A15AB1 /* MainScreenView.swift */; };
 		A84D4A382A8686BB00A15AB1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A372A8686BB00A15AB1 /* Login.swift */; };
 		A84D4A3C2A868AC200A15AB1 /* ImportAccountOptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D4A3B2A868AC200A15AB1 /* ImportAccountOptionScreen.swift */; };
@@ -25,6 +26,7 @@
 		A860E03D2A8C8AD3007100CE /* PhoneDeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E03C2A8C8AD3007100CE /* PhoneDeviceAPI.swift */; };
 		A860E03F2A8C8EDB007100CE /* ContactAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E03E2A8C8EDB007100CE /* ContactAPI.swift */; };
 		A860E0412A8C9921007100CE /* CallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A860E0402A8C9921007100CE /* CallAPI.swift */; };
+		A8629D702A933DF50083101A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8629D6F2A933DF50083101A /* GoogleService-Info.plist */; };
 		A88A2E2E2A849CF700201EAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2D2A849CF700201EAF /* User.swift */; };
 		A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */; };
 		A88A2E322A849D4700201EAF /* AddressCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A2E312A849D4700201EAF /* AddressCategory.swift */; };
@@ -71,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A813B04C2A9338F500E38272 /* SelectedTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTab.swift; sourceTree = "<group>"; };
 		A84D4A322A86865300A15AB1 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		A84D4A372A8686BB00A15AB1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		A84D4A3B2A868AC200A15AB1 /* ImportAccountOptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportAccountOptionScreen.swift; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		A860E03C2A8C8AD3007100CE /* PhoneDeviceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDeviceAPI.swift; sourceTree = "<group>"; };
 		A860E03E2A8C8EDB007100CE /* ContactAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPI.swift; sourceTree = "<group>"; };
 		A860E0402A8C9921007100CE /* CallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAPI.swift; sourceTree = "<group>"; };
+		A8629D6F2A933DF50083101A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A88A2E2D2A849CF700201EAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A88A2E2F2A849D1900201EAF /* PhoneDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDevice.swift; sourceTree = "<group>"; };
 		A88A2E312A849D4700201EAF /* AddressCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCategory.swift; sourceTree = "<group>"; };
@@ -146,9 +150,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A813B04B2A9338DF00E38272 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				A813B04C2A9338F500E38272 /* SelectedTab.swift */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
 		A84D4A302A8685F900A15AB1 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A813B04B2A9338DF00E38272 /* DataAccess */,
 				A84D4A312A86863900A15AB1 /* UI */,
 			);
 			path = MainScreen;
@@ -276,6 +289,7 @@
 		A8BC71F42A838BE50088392C /* NarrativePhone */ = {
 			isa = PBXGroup;
 			children = (
+				A8629D6F2A933DF50083101A /* GoogleService-Info.plist */,
 				A8E180C62A8FBFC7003BCB4D /* Call */,
 				A84D4A342A86867F00A15AB1 /* Authentication */,
 				A84D4A302A8685F900A15AB1 /* MainScreen */,
@@ -671,6 +685,7 @@
 			files = (
 				A8BC71FE2A838BE60088392C /* Preview Assets.xcassets in Resources */,
 				A8BC71FA2A838BE60088392C /* Assets.xcassets in Resources */,
+				A8629D702A933DF50083101A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +714,7 @@
 				A88A2E302A849D1900201EAF /* PhoneDevice.swift in Sources */,
 				A8F9241B2A84032C0080D2C6 /* ContactList.swift in Sources */,
 				A84D4A542A8719E400A15AB1 /* AccountService.swift in Sources */,
+				A813B04D2A9338F500E38272 /* SelectedTab.swift in Sources */,
 				A860E03D2A8C8AD3007100CE /* PhoneDeviceAPI.swift in Sources */,
 				A84D4A482A8696B900A15AB1 /* ContactService.swift in Sources */,
 				A84D4A3F2A868EC700A15AB1 /* Start.swift in Sources */,
