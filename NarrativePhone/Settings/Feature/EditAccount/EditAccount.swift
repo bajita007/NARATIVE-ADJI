@@ -3,6 +3,8 @@ import SwiftUI
 struct EditAccount: View {
     let account: User
     
+    @ObservedObject var vm = AccountViewModel()
+    
     @State private var accountName: String
     
     @State private var loginId: String
@@ -94,7 +96,7 @@ struct EditAccount: View {
                     }
                      
                     Button(action: {
-                        print("Save")
+                        vm.updateAccount()
                     }) {
                         Text("変更")
                             .frame(minWidth: 0, maxWidth: .infinity)
@@ -109,6 +111,10 @@ struct EditAccount: View {
                     .cornerRadius(25)
                 }
                 .padding(20)
+            }
+            
+            if(vm.showLoadingModal){
+                LoadingModal()
             }
         }
         .navigationTitle("アカウント情報編集")

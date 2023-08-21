@@ -1,19 +1,30 @@
 import SwiftUI
 
 struct AccountSettings: View {
-    private let service = AccountService()
-    
-    @State private var accounts: [User] = []
+    @ObservedObject var vm = AccountViewModel()
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(accounts) { account in
-                        Section {
-                            AccountListItem(account: account)
+            GeometryReader { _ in
+                switch vm.state {
+                case .idle:
+                    Color.clear.onAppear {
+                        vm.getAll()
+                    }
+                case .loading:
+                    LoadingView()
+                case .success(let items):
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            ForEach(items) { account in
+                                Section {
+                                    AccountListItem(account: account)
+                                }
+                            }
                         }
                     }
+                case .failure(let error):
+                    ErrorView(error: error)
                 }
             }
             .listStyle(.insetGrouped)
@@ -26,9 +37,6 @@ struct AccountSettings: View {
                     Text("アカウント追加")
                 }
             )
-        }
-        .task {
-            self.accounts = service.getAll()
         }
     }
 }
