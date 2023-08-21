@@ -3,7 +3,7 @@ import SwiftUI
 struct ContactDetail: View {
     let contact: AddressEntry
     
-    private let service = ContactService()
+    @ObservedObject var vm = ContactViewModel()
     
     @State private var isFavorited: Bool
     
@@ -149,10 +149,9 @@ struct ContactDetail: View {
             }
         }
         .task {
-            self.contactCategory = service.getContactCategory(id: contact.addressCategoryId)
+            contactCategory = vm.getContactCategory(id: contact.addressCategoryId)
         }
-    }
-            
+    }  
 }
 
 struct ContactDetail_Previews: PreviewProvider {

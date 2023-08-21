@@ -7,6 +7,8 @@ struct ContactCategoryModal: View {
     
     let action: () -> Void
     
+    let actionLabel: String
+    
     @Binding var isActive: Bool
     
     @Binding var categoryName: String
@@ -64,7 +66,7 @@ struct ContactCategoryModal: View {
                                 RoundedRectangle(cornerRadius: 8)
                                     .foregroundColor(.green)
                                 
-                                Text("追加")
+                                Text(actionLabel)
                                     .font(.system(size: 16, weight: .bold))
                                     .foregroundColor(.white)
                                     .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
@@ -96,6 +98,7 @@ struct ContactCategoryModal_Previews: PreviewProvider {
             action: {
                 
             },
+            actionLabel: "追加",
             isActive: .constant(true),
             categoryName: .constant("")
         )
