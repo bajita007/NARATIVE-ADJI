@@ -40,6 +40,17 @@ extension ZoomService : MobileRTCAuthDelegate {
         }
     }
     
+    func onMobileRTCLoginResult(_ returnValue: MobileRTCLoginFailReason) {
+        switch returnValue {
+        case .success:
+            print("Successfully logged in")
+        case .wrongPassword:
+            print("Password incorrect")
+        default:
+            print("Could not log in. Error code: \(returnValue)")
+        }
+    }
+    
     func onMobileRTCLogoutReturn(_ returnValue: Int) {
         switch returnValue {
         case 0:

@@ -10,16 +10,17 @@ struct MainScreenView: View {
                 Text("ユーザー")
             }
             .tag(1)
-            .actionSheet(isPresented: $selectedTab.isCustomItemSelected) {
-                let account1 = ActionSheet.Button.default(Text("山田太郎")) {  }
-                let account2 = ActionSheet.Button.default(Text("山田二郎")) {  }
-                let cancelButton = ActionSheet.Button.cancel(Text("キャンセル")) {  }
-                
-                return ActionSheet(
-                    title: Text("ユーザ切り替え"),
-                    buttons: [account1, account2, cancelButton]
-                )
+            .alert("ユーザ切り替え", isPresented: $selectedTab.isCustomItemSelected, actions: {
+                  Button("山田太郎", action: {})
+                  Button("山田二郎", action: {})
+                Button("キャンセル", role: .cancel, action: {})
+           
+            }, message: {
+                Text("ユーザ切り替え")
             }
+                
+            )
+
             
             FavoriteContactList().tabItem {
                 Image(systemName: "star")

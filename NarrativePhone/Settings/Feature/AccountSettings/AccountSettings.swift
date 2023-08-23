@@ -2,6 +2,11 @@ import SwiftUI
 
 struct AccountSettings: View {
     @ObservedObject var vm = AccountViewModel()
+    @State var showModal: Bool = false
+    @State var newPassword: String = ""
+    @State var password: String = ""
+    
+    
     
     var body: some View {
         NavigationView {
@@ -18,10 +23,28 @@ struct AccountSettings: View {
                         VStack(spacing: 0) {
                             ForEach(items) { account in
                                 Section {
-                                    AccountListItem(account: account)
+                                    AccountListItem(
+                                        account: account,
+                                        modalChangePassword: {
+                                        showModal = true
+                                            print("OKE")
+                                        }
+                                    )
                                 }
                             }
                         }
+                    }
+                    if showModal {
+                        ModalChangePassword(
+                            newPassword: $newPassword,
+                            password: $password,
+                            isActive: $showModal,
+                            action: {
+                                showModal = false
+                                
+                            },
+                            actionLabel: "Simpan"
+                        )
                     }
                 case .failure(let error):
                     ErrorView(error: error)
@@ -37,7 +60,12 @@ struct AccountSettings: View {
                     Text("アカウント追加")
                 }
             )
+            
+          
+          
         }
+     
+        
     }
 }
 

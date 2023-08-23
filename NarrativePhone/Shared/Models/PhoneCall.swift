@@ -20,7 +20,7 @@ struct PhoneCall: Identifiable, Codable {
     // 2 for incoming call
     // 3 for missed call
     var status: Int {
-        return  Int.random(in: 1..<3)
+        return  Int.random(in: 1..<4)
     }
     
     // Imitating owner relationship

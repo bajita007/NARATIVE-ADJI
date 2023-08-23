@@ -16,16 +16,15 @@ struct StartCallService: UIViewControllerRepresentable {
     }
     
     func makeUIViewController(context: Context) -> UIViewController {
-        print("making the view controller")
         let newVC = UIViewController()
         newVC.view.tag = 83838383
+        newVC.view.frame = .infinite
 
         return newVC
     }
     
     func updateUIViewController(_ taskViewController: UIViewController, context: Context) {
         askPermissionsForCameraFeed()
-        print("check video permissions")
     }
     
     func askPermissionsForCameraFeed() {
@@ -47,24 +46,35 @@ struct StartCallService: UIViewControllerRepresentable {
             UIApplication.shared.delegate = AppDelegate.Shared
             let delegate = UIApplication.shared.delegate as! AppDelegate
             delegate.window = window
-            print("finding window to provide to zoom sdk")
             joinMeeting(meetingNumber: meetingNumber, meetingPassword: passCode)
         }
     }
 
     func joinMeeting(meetingNumber: String, meetingPassword: String) {
-        // Obtain the MobileRTCMeetingService from the Zoom SDK, this service can start meetings, join meetings, leave meetings, etc.
+        let meetingSetting = MobileRTC.shared().getMeetingSettings()
+        meetingSetting?.meetingTitleHidden = true
+        meetingSetting?.meetingParticipantHidden = true
+        meetingSetting?.meetingShareHidden = true
+        meetingSetting?.meetingInviteHidden = true
+        meetingSetting?.meetingInviteUrlHidden = true
+        meetingSetting?.meetingChatHidden = true
+        meetingSetting?.meetingMoreHidden = true
+        meetingSetting?.closeCaptionHidden = true
+        meetingSetting?.hideReactions(onMeetingUI: true)
+        meetingSetting?.disableCloudWhiteboard(true)
+        meetingSetting?.hideFeedbackButtonOnCloudWhiteboard = true
+        meetingSetting?.hideShareButtonOnCloudWhiteboard = true
+        meetingSetting?.hideAboutButtonOnCloudWhiteboard = true
+        meetingSetting?.disableCloudWhiteboard(true)
+        meetingSetting?.meetingInviteHidden = true
+        
         if let meetingService = MobileRTC.shared().getMeetingService() {
-            // Create a MobileRTCMeetingJoinParam to provide the MobileRTCMeetingService with the necessary info to join a meeting.
-            // In this case, we will only need to provide a meeting number and password.
-            // 2. Set the ViewContoller to be the MobileRTCMeetingServiceDelegate
             meetingService.delegate = delegate
+
             let joinMeetingParameters = MobileRTCMeetingJoinParam()
             joinMeetingParameters.meetingNumber = meetingNumber
             joinMeetingParameters.password = meetingPassword
             
-            // Call the joinMeeting function in MobileRTCMeetingService. The Zoom SDK will handle the UI for you, unless told otherwise.
-            // If the meeting number and meeting password are valid, the user will be put into the meeting. A waiting room UI will be presented or the meeting UI will be presented.
             DispatchQueue.main.async {
                 meetingService.joinMeeting(with: joinMeetingParameters)
             }
@@ -75,6 +85,15 @@ struct StartCallService: UIViewControllerRepresentable {
 
 extension StartCallService {
     class Delegate: NSObject, MobileRTCMeetingServiceDelegate {
+        func onJBHWaiting(_ cmd: JBHCmd) {
+            switch cmd {
+            case .show:
+                print("SHOW")
+            default:
+                print("False")
+            }
+        }
+        
         func onMeetingError(_ error: MobileRTCMeetError, message: String?) {
             switch error {
             case .passwordError:

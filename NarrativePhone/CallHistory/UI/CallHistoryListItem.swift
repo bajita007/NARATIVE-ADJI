@@ -71,14 +71,15 @@ struct CallHistoryListItem: View {
                 .padding(.leading)
                 
                 Spacer()
-
-                Image(systemName: "phone.fill")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .background(.green)
-                    .clipShape(Circle())
+                if call.status == 3 {
+                    Image(systemName: "phone.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .background(.green)
+                        .clipShape(Circle())
+                }
             }
            
             // Call participants
