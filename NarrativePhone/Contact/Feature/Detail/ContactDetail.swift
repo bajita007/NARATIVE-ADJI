@@ -117,21 +117,22 @@ struct ContactDetail: View {
                         }
                     }
                     
-                    VStack {
-                        Image(systemName: "phone.fill")
-                            .resizable()
-                            .frame(width: 35, height: 35)
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .background( Color.green)
-                            .clipShape(Circle())
-                        
-                        // Make call
-                        Text("通話開始")
-                            .font(.system(size: 12))
+                    NavigationLink(destination: CreateCall()) {
+                        VStack {
+                            Image(systemName: "phone.fill")
+                                .resizable()
+                                .frame(width: 35, height: 35)
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .background( Color.green)
+                                .clipShape(Circle())
                             
+                            // Make call
+                            Text("通話開始")
+                                .font(.system(size: 12))
+                        }
+                        .frame(width: UIScreen.main.bounds.width, alignment: .center)
                     }
-                    .frame(width: UIScreen.main.bounds.width, alignment: .center)
                     .listRowBackground(Color.clear)
                 }
                 .navigationTitle("連絡先詳細")

@@ -1,6 +1,10 @@
 import SwiftUI
 
 struct CreateCall: View {
+    @State var startMeeting: Bool = false
+    @State var meetingNumber: String = "9385999268"
+    @State var meetingPassword: String = "bMar6n"
+    
     var body: some View {
            VStack {
                VStack {
@@ -100,14 +104,18 @@ struct CreateCall: View {
 
                        Spacer()
                        
-                       Image(systemName: "phone.fill")
-                           .resizable()
-                           .padding(12)
-                           .frame(width: 50, height: 50)
-                           .foregroundColor(.white)
-                           .padding(8)
-                           .background(.green)
-                           .clipShape(Circle())
+                       Button(action: {
+                           self.startMeeting.toggle()
+                       }) {
+                           Image(systemName: "phone.fill")
+                               .resizable()
+                               .padding(12)
+                               .frame(width: 50, height: 50)
+                               .foregroundColor(.white)
+                               .padding(8)
+                               .background(.green)
+                               .clipShape(Circle())
+                       }
                        
                        Spacer()
                    }
@@ -134,9 +142,16 @@ struct CreateCall: View {
                        Spacer()
                    }
                }
-               .frame(width: .infinity)
                .background(.gray.opacity(0.1))
            }
+        
+            if self.startMeeting{
+                StartCallService(
+                    delegate: StartCallService.Delegate(),
+                    zoomMeetingNumber: $meetingNumber,
+                    zoomPasscode: $meetingPassword
+                )
+            }
        }
 }
 

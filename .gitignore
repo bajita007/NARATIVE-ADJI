@@ -52,3 +52,6 @@ Thumbs.db
 
 ## User settings
 **/xcuserdata/
+
+## Zoom SDK
+MobileRTC.xcframework

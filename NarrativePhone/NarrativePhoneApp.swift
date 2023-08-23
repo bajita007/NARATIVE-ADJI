@@ -8,18 +8,25 @@
 import SwiftUI
 import FirebaseCore
 
+// TODO: update this value on production
+let jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBLZXkiOiJ3aURZR1hPa1M0Szhzc1NGRjd1djdBIiwiaWF0IjoxNjkyNjE0NjAzLCJleHAiOjE3MDIzMTQwMDAsInRva2VuRXhwIjoxNzAyMzE0MDAwfQ.ums4R1EQ1Zpouc7HJNpMkGQRaMEXWcM0WtkdjAFKLnY"
+
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    static let Shared = AppDelegate()
+    let zoomService = ZoomService()
+    var window: UIWindow?
+    
 
-  func application(_ application: UIApplication,
-
+    func application(_ application: UIApplication,
+                     
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
-    FirebaseApp.configure()
+        FirebaseApp.configure()
+        zoomService.initializeSDK(jwtToken: jwtToken)
 
-    return true
-
-  }
+        return true
+    }
 
 }
 

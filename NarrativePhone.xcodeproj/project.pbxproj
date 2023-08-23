@@ -60,6 +60,10 @@
 		A8F9243E2A8414E80080D2C6 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9243D2A8414E80080D2C6 /* AccountList.swift */; };
 		A8F924432A84157F0080D2C6 /* CallHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924422A84157F0080D2C6 /* CallHistoryList.swift */; };
 		A8F9244A2A8415F70080D2C6 /* CallHistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F924492A8415F70080D2C6 /* CallHistoryListItem.swift */; };
+		A8F9B1F12A95B9990039B8EC /* MobileRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F9B1EF2A95B9980039B8EC /* MobileRTC.xcframework */; };
+		A8F9B1F22A95B9990039B8EC /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A8F9B1F02A95B9980039B8EC /* MobileRTCResources.bundle */; };
+		A8F9B1F52A95B9F10039B8EC /* ZoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9B1F42A95B9F10039B8EC /* ZoomService.swift */; };
+		A8F9B1F82A95BB920039B8EC /* StartCallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9B1F72A95BB920039B8EC /* StartCallService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +140,10 @@
 		A8F9243D2A8414E80080D2C6 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
 		A8F924422A84157F0080D2C6 /* CallHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryList.swift; sourceTree = "<group>"; };
 		A8F924492A8415F70080D2C6 /* CallHistoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallHistoryListItem.swift; sourceTree = "<group>"; };
+		A8F9B1EF2A95B9980039B8EC /* MobileRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MobileRTC.xcframework; sourceTree = "<group>"; };
+		A8F9B1F02A95B9980039B8EC /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobileRTCResources.bundle; sourceTree = "<group>"; };
+		A8F9B1F42A95B9F10039B8EC /* ZoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomService.swift; sourceTree = "<group>"; };
+		A8F9B1F72A95BB920039B8EC /* StartCallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCallService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8C078BC2A8F407A008EDCC1 /* FirebaseAppDistribution-Beta in Frameworks */,
+				A8F9B1F12A95B9990039B8EC /* MobileRTC.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +295,8 @@
 		A8BC71E92A838BE50088392C = {
 			isa = PBXGroup;
 			children = (
+				A8F9B1EF2A95B9980039B8EC /* MobileRTC.xcframework */,
+				A8F9B1F02A95B9980039B8EC /* MobileRTCResources.bundle */,
 				A8BC71F42A838BE50088392C /* NarrativePhone */,
 				A8BC72062A838BE60088392C /* NarrativePhoneTests */,
 				A8BC72102A838BE60088392C /* NarrativePhoneUITests */,
@@ -363,6 +374,7 @@
 		A8E180C62A8FBFC7003BCB4D /* Call */ = {
 			isa = PBXGroup;
 			children = (
+				A8F9B1F62A95BB710039B8EC /* DataAccess */,
 				A8E180C72A8FBFCE003BCB4D /* Feature */,
 			);
 			path = Call;
@@ -406,6 +418,7 @@
 		A8F9241D2A8403D80080D2C6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A8F9B1F32A95B9DC0039B8EC /* Zoom */,
 				A8F924392A84138F0080D2C6 /* UI */,
 				A8F9241E2A8403E00080D2C6 /* Models */,
 			);
@@ -594,6 +607,22 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		A8F9B1F32A95B9DC0039B8EC /* Zoom */ = {
+			isa = PBXGroup;
+			children = (
+				A8F9B1F42A95B9F10039B8EC /* ZoomService.swift */,
+			);
+			path = Zoom;
+			sourceTree = "<group>";
+		};
+		A8F9B1F62A95BB710039B8EC /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				A8F9B1F72A95BB920039B8EC /* StartCallService.swift */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -705,6 +734,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8BC71FE2A838BE60088392C /* Preview Assets.xcassets in Resources */,
+				A8F9B1F22A95B9990039B8EC /* MobileRTCResources.bundle in Resources */,
 				A8BC71FA2A838BE60088392C /* Assets.xcassets in Resources */,
 				A8629D702A933DF50083101A /* GoogleService-Info.plist in Resources */,
 			);
@@ -737,11 +767,13 @@
 				A8F9241B2A84032C0080D2C6 /* ContactList.swift in Sources */,
 				A84D4A542A8719E400A15AB1 /* AccountService.swift in Sources */,
 				A813B04D2A9338F500E38272 /* SelectedTab.swift in Sources */,
+				A8F9B1F52A95B9F10039B8EC /* ZoomService.swift in Sources */,
 				A860E03D2A8C8AD3007100CE /* PhoneDeviceAPI.swift in Sources */,
 				A84D4A482A8696B900A15AB1 /* ContactService.swift in Sources */,
 				A84D4A3F2A868EC700A15AB1 /* Start.swift in Sources */,
 				A860E0372A8C70C8007100CE /* AuthenticationAPI.swift in Sources */,
 				A84D4A562A871C5F00A15AB1 /* EditAccount.swift in Sources */,
+				A8F9B1F82A95BB920039B8EC /* StartCallService.swift in Sources */,
 				A8F924302A84079C0080D2C6 /* AccountListItem.swift in Sources */,
 				A860E0412A8C9921007100CE /* CallAPI.swift in Sources */,
 				A860E0392A8C73CD007100CE /* SystemAdminAPI.swift in Sources */,
@@ -938,6 +970,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"\"";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -978,6 +1011,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"\"";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
